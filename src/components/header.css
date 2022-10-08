@@ -1,0 +1,42 @@
+header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+.navBar {
+  font-family: 'Roboto','Montserrat', 'Raleway', 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 1.4rem 1.0875rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.navBrand {
+  margin-left: 4rem;
+  height: 45px;
+  width: 45px
+}
+
+.navLinks{
+  
+}
+.navItem {
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navItemOrder {
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
