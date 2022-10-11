@@ -1,0 +1,36 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  margin-top: 5em;
+}
+
+.offerText {
+  font-family: 'Cormorant Garamond';
+  font-size: 35px;
+  font-weight: 700!important;
+  font-style: normal;
+  text-align: center;
+}
+
+.heartContainer {
+  display:grid;
+  grid-template-columns: 35% 30% 35%;
+  text-align: center;
+  align-items: center;
+  grid-gap: 0;
+}
+.divider {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0;
+}
+.divider>hr {
+
+}
+.heartTextTwo {
+  font-size: 14px;
+  color: #8f8f8f;
+}

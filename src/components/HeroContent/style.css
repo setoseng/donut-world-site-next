@@ -33,37 +33,39 @@
   letter-spacing: 5px;
   font-weight: 600;
   font-size: 12px;
-  margin: 10px 0 ;
+  margin: 15px 0 ;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 .productText {
   font-family: 'Cormorant Garamond';
-  font-size: 7em;
+  font-size: 6em;
   color: white;
   letter-spacing: 2px;
   font-weight: bold;
 }
 .donutText {
   font-family: 'Cormorant Garamond';
-  font-size: 7em;
+  font-size: 6em;
   color: white;
   letter-spacing: 2px;
   font-weight: bold;
   position: relative;
   animation: slideInLeft ease 2s;
+  font-style: italic;
   animation-fill-mode: forwards;
 }
 .kolacheText {
   font-family: 'Cormorant Garamond';
-  font-size: 7em;
+  font-size: 6em;
   color: white;
   letter-spacing: 2px;
   font-weight: bold;
   margin-top: 75px;
   margin-bottom: 75px;
   position: relative;
+  font-style: italic;
   animation: slideInRight ease 2s;
   animation-fill-mode: forwards;
 }

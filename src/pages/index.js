@@ -4,17 +4,19 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import style from '../components/typography.css'
+
 import HeroContent from "../components/HeroContent"
+import WhatWeOffer from "../components/WhatWeOffer"
+
 
 
 
 const IndexPage = () => (
   <Layout>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&family=Montserrat:wght@300&family=Roboto&family=Sacramento&display=swap');
-    </style>
     <Seo title="Home" />
     <HeroContent />
+    <WhatWeOffer />
     {/* <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />

@@ -1,8 +1,6 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from 'gatsby-background-image'
 
 import './style.css'
 
@@ -23,19 +21,31 @@ const WhatWeOffer = () => {
   const imageData = data.desktop.childImageSharp.fluid
 
   return (
-    <BackgroundImage
-      Tag="section"
-      className='heroContainer'
-      fluid={imageData}
-      backgroundColor={`#040e18`}
-    >
-      <div className='heroText'>
-        <p className='premiumText'>Premium</p>
-        <p className='qualityText'>QUALITY</p>
-        <p className='donutText'>Donuts</p>
-        <p className='kolacheText'>&Kolaches</p>
+    <div className="container">
+      <div className="item1"></div>
+      <div className="item2">
+        <h2 className='offerText'>What We Offer</h2>
+        <div className="heartContainer">
+          <div className="divider">
+            <div></div>
+            <hr></hr>
+          </div>
+          <p className="heartTextTwo">from our hearts</p>
+          <div className="divider">
+            <hr></hr>
+            <div></div>
+          </div>
+        </div>
       </div>
-    </BackgroundImage>
+      <div className="item3"></div>
+      <div className="item4">
+        
+      </div>
+      <div className="item5">
+      </div>
+      <div className="item6">
+      </div>
+    </div>
   )
 }
 

@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => {
   const listenScrollEvent = () => {
       if (window.scrollY > 10) {
         setHeaderColor("white")
-        setNavText("#7A7A7A")
+        setNavText("rgba(61,61,61,0.69)")
       } else {
         setHeaderColor("transparent")
         setNavText("white")
