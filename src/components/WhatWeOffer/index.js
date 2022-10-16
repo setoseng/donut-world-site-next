@@ -1,25 +1,12 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
+import {StaticImage} from 'gatsby-plugin-image'
+
 
 
 import './style.css'
 
 const WhatWeOffer = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        desktop: file(relativePath: { eq: "background-slider.jpeg" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  )
-  const imageData = data.desktop.childImageSharp.fluid
-
   return (
     <div className="container">
       <div className="item1"></div>
@@ -38,12 +25,41 @@ const WhatWeOffer = () => {
         </div>
       </div>
       <div className="item3"></div>
-      <div className="item4">
-        
+      {/* To Do
+        * Fix Column for First Row to be 1/3 each
+        * Allow for additional Row to have Auto Column
+        * Add background for entire statementContainer
+        * Fix Side Margins for statementContainer
+        */}
+      <div className="statementContainer">
+        <div className="item4">
+          <StaticImage
+            src={'../../images/pink-donut.jpg'}
+            width={350}
+            height={350}
+            className="offerImage"
+          />
+          <h2>
+            Always Fresh
+          </h2>
+        </div>
+        <div className="item5">
+          <StaticImage
+            src={'../../images/flour-bag.jpeg'}
+            width={350}
+            height={350}
+            className="offerImage"
+          />
+        </div>
+        <div className="item6">
       </div>
-      <div className="item5">
-      </div>
-      <div className="item6">
+      
+        <StaticImage
+          src={'../../images/flour-egg.jpg'}
+          width={350}
+          height={350}
+          className="offerImage"
+        />
       </div>
     </div>
   )

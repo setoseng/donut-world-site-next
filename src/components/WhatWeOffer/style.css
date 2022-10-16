@@ -1,7 +1,8 @@
 .container {
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-column: 33%;
+  grid-template-columns: auto;
   grid-template-rows: auto;
   grid-gap: 1em;
   margin-top: 5em;
@@ -27,10 +28,29 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0;
 }
-.divider>hr {
 
-}
 .heartTextTwo {
   font-size: 14px;
   color: #8f8f8f;
+}
+
+.statementContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  justify-self: center;
+  text-align: center;
+}
+
+.statementContainer > h2 {
+  font-family: 'Cormorant Garamond';
+  font-size: 2em;
+  font-weight: 700!important;
+  font-style: italic;
+  text-align: center;
+  margin: 1em;
+}
+
+.offerImage {
+  border-radius: 50%;
 }
