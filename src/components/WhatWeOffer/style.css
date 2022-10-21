@@ -1,10 +1,7 @@
 .container {
   height: 100vh;
-  display: grid;
-  grid-column: 33%;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-gap: 1em;
+  display: flex;
+  flex-direction: column;
   margin-top: 5em;
 }
 
@@ -14,19 +11,19 @@
   font-weight: 700!important;
   font-style: normal;
   text-align: center;
+  margin-bottom: .2em;
 }
 
 .heartContainer {
-  display:grid;
-  grid-template-columns: 35% 30% 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
-  align-items: center;
-  grid-gap: 0;
 }
-.divider {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0;
+
+.heartLine {
+  align-self: center;
+  width: 3.5em;
 }
 
 .heartTextTwo {
@@ -34,21 +31,30 @@
   color: #8f8f8f;
 }
 
-.statementContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  justify-self: center;
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5em;
+  align-self: center;
   text-align: center;
 }
 
-.statementContainer > h2 {
-  font-family: 'Cormorant Garamond';
+.statementContainer {
+  width: 15em;
+  margin: auto;
+}
+
+.statementText {
+  font-family: 'Cormorant Garamond' !important;
   font-size: 2em;
   font-weight: 700!important;
   font-style: italic;
-  text-align: center;
-  margin: 1em;
+  margin-top: 1em;
+}
+
+.statementSubText {
+  display: flex;
+  font-size: 14px;
 }
 
 .offerImage {
