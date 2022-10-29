@@ -28,6 +28,7 @@ const HeroContent = () => {
       className='heroContainer'
       fluid={imageData}
       backgroundColor={`#040e18`}
+      alt="background image of donuts"
     >
       <div className='heroText'>
         <p className='premiumText'>Premium</p>
