@@ -9,34 +9,22 @@ import './style.css'
 const WhatWeOffer = () => {
   return (
     <div className="offerContainer">
-        <StaticImage
-          style={{
-            gridArea: "1/1",
-          }}
-          layout="fullWidth"
-          placeholder="blurred"
-          // You can optionally force an aspect ratio for the generated image
-          aspectRatio={1 / 1}
-          // This is a presentational image, so the alt should be an empty string
-          alt=""
-          src={"../../images/Always-fresh2.jpeg"}
-          formats={["auto", "webp", "avif"]}
-        />
-      <div
-        style={{
-          // By using the same grid area for both, they are stacked on top of each other
-          gridArea: "1/1",
-          position: "relative",
-          // This centers the other elements inside the hero component
-          placeItems: "center",
-          display: "grid",
-        }}
-      >
+      <StaticImage
+        className="heroOfferImage"
+        layout="fullWidth"
+        placeholder="dominantColor"
+        aspectRatio={2/1}
+        quality={90}
+        alt=""
+        src={"../../images/Always-fresh2.jpeg"}
+        formats={["auto", "webp", "avif"]}
+      />
+      <div className="offerSubContainer">
         <h2 className='offerText'>What We Offer</h2>
         <div className="heartContainer">
-          <hr className="heartLine" style={{ marginRight: '15px'}}/>
+          <hr className="heartLine" style={{ justifySelf: "end" }}/>
           <p className="heartTextTwo">from our hearts</p>
-          <hr className="heartLine" style={{ marginLeft: '15px'}}/>
+          <hr className="heartLine" style={{ justifySelf: "start" }}/>
         </div>
         <div className="imageContainer">
           <div>

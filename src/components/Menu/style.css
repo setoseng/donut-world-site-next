@@ -1,9 +1,13 @@
 .menuContainer {
   background-color: #d1466c;
   display: grid;
+  grid-area: content;
 }
 
 .menuPanel {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 3em 10em;
   background-color: white;
   margin: 5em;
   border-radius: .5em;
@@ -14,7 +18,7 @@
   flex-direction: column;
   align-items: center;
 }
-.menuText {
+.menuHeaderText {
   font-family: "Cormorant Garamond";
   font-size: 40px;
   font-weight: 700 !important;
@@ -22,40 +26,43 @@
   margin-top: .2em;
   margin-bottom: .2em;
 }
-.menuDivider {
+.menuHeaderDivider {
   align-self: center;
   width: 15em;
 }
 
 .menuSubContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
   column-gap: 5em;
-  margin: 5em 7em 2em 7em;
+  margin: 0 7em 2em 7em;
 }
 
-.menuTypeText {
+.menuItemType {
   font-size: 2em;
   font-family: 'Cormorant Garamond'!important;
   color:#d1466c;
   font-weight: 300 !important;
 }
 
-.menuColumnLeft, .menuColumnRight {
-  width: 50%;
+.menuItemContainer {
+  display: grid;
 }
 
-.menuItemContainer {
-  display: flex;
-  flex-direction: row;
+.menuTextContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+}
+.menuTextContainer p:nth-of-type(2) {
+  justify-self: end;
 }
 .menuItemBorder {
   border-bottom: 1px dashed #e5e5e5;
 }
 
-.menuItemContainer > p {
+.menuItemText {
   font-family: "Montserrat";
   font-size: 1em;
   color: #525151;
@@ -68,4 +75,21 @@
   color: #525151;
   margin-top: .5em; 
   min-height: 4em;
+}
+
+.menuOrderButton {
+  color: #d1466c;
+  height: 4em;
+  width: 11em;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  border:#d1466c solid 1px;
+  border-radius: 40px;
+}
+.menuOrderButton:hover {
+  letter-spacing: 3px;
+  width: 12em;
+  transition: all 0.3s ease-out;
 }

@@ -1,149 +1,68 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
 
-import { getImage, StaticImage } from "gatsby-plugin-image"
-import { BgImage } from "gbimage-bridge"
+import { StaticImage } from "gatsby-plugin-image"
 
 import menuData from '../../data/menuData.js'
 
 
 import './style.css'
 
-const getMenuDonut = (menuData) => {
-  return(
-    <div>{
-      menuData.donut.map((item) => {
-        return(
-          <div key={item}>
-            <div className="menuItemContainer">
-              <p>{item.name}</p>
-              <p>{item.price}</p>
-            </div>
-          <div className="menuItemBorder"></div>
-            <p className="menuItemDescription">{item.description}</p>
-          </div>
-        )
-      })
-    }</div>
-  )
-}
+const getMenuData = (menuData) => {
+  let
+    menuItem,
+    menuItemType,
+    menuItemData = "";
 
-const getMenuKolache = (menuData) => {
-  return(
-    <div>{
-      menuData.kolache.map((item) => {
+  //Loop through menuData to assign each menu item names to menuItemType
+  menuItemData = menuData.map(itemType => {
+    for(const [key, value] of Object.entries(itemType)) {
+      let cleanMenuItemType = key.charAt(0).toUpperCase() + key.slice(1);
+      menuItemType = <h2 className="menuItemType">{cleanMenuItemType}</h2>
+      menuItem = value.map((item, index) => {
         return(
-          <div key={item}>
-            <div className="menuItemContainer">
-              <p>{item.name}</p>
-              <p>{item.price}</p>
+          <div key={`${item} : ${index}`}>
+            <div className="menuTextContainer">
+              <p className="menuItemText">{item.name}</p>
+              <p className="menuItemText">{item.price}</p>
             </div>
-          <div className="menuItemBorder"></div>
+            <div className="menuItemBorder"></div>
             <p className="menuItemDescription">{item.description}</p>
-          </div>
+          </div> 
         )
       })
-    }</div>
-  )
-}
-
-const getMenuCroissant = (menuData) => {
-  return(
-    <div>{
-      menuData.croissant.map((item) => {
-        return(
-          <div key={item}>
-            <div className="menuItemContainer">
-              <p>{item.name}</p>
-              <p>{item.price}</p>
-            </div>
-          <div className="menuItemBorder"></div>
-            <p className="menuItemDescription">{item.description}</p>
-          </div>
-        )
-      })
-    }</div>
-  )
-}
-
-const getMenuBiscuit = (menuData) => {
-  return(
-    <div>{
-      menuData.biscuit.map((item) => {
-        return(
-          <div key={item}>
-            <div className="menuItemContainer">
-              <p>{item.name}</p>
-              <p>{item.price}</p>
-            </div>
-          <div className="menuItemBorder"></div>
-            <p className="menuItemDescription">{item.description}</p>
-          </div>
-        )
-      })
-    }</div>
-  )
-}
+      return(
+        <div>
+          {menuItemType}
+          {menuItem}
+        </div>
+      )
+    }
+  });
+  return menuItemData;
+};
 
 const Menu = () => {
 
   return (
     <div className="menuContainer">
-      <StaticImage
-          style={{
-            gridArea: "1/1",
-          }}
-          layout="fullWidth"
-          placeholder="blurred"
-          // You can optionally force an aspect ratio for the generated image
-          aspectRatio={1 / 1}
-          // This is a presentational image, so the alt should be an empty string
-          alt=""
-          src={"../../images/chocolate-donut.jpeg"}
-          formats={["auto", "webp", "avif"]}
-        />
-      <div
-        style={{
-          // By using the same grid area for both, they are stacked on top of each other
-          gridArea: "1/1",
-          position: "relative",
-          // This centers the other elements inside the hero component
-          placeItems: "center",
-          display: "grid",
-        }}
-      >
-        <div className="menuPanel">
-          <div className="menuHeaderContainer">
-            <StaticImage
-              src={'../../images/icon-donut.png'}
-              width={75}
-              height={75}
-              alt="donut icon"
-              className="offerImage"
-            />
-            <h1 className="menuText">Our Menu</h1>
-            <hr className="menuDivider" />
-          </div>
-          <div className="menuSubContainer">
-            <div className="menuColumnLeft">
-              <h2 className="menuTypeText">Donuts</h2>
-              {getMenuDonut(menuData)}
-            </div>
-            <div className="menuColumnRight">
-              <h2 className="menuTypeText">Kolache</h2>
-              {getMenuKolache(menuData)}
-            </div>
-          </div>
-          <div className="menuSubContainer">
-            <div className="menuColumnLeft">
-              <h2 className="menuTypeText">Croissant</h2>
-              {getMenuCroissant(menuData)}
-            </div>
-            <div className="menuColumnRight">
-              <h2 className="menuTypeText">Biscuit</h2>
-              {getMenuBiscuit(menuData)}
-            </div>
-          </div>
+      <div className="menuPanel">
+        <div></div>
+        <div className="menuHeaderContainer">
+          <StaticImage
+            src={'../../images/icon-donut.png'}
+            width={75}
+            height={75}
+            alt="donut icon"
+            className="offerImage"
+          />
+          <h1 className="menuHeaderText">Our Menu</h1>
+          <hr className="menuHeaderDivider" />
+        </div>
+        <div className="menuSubContainer">
+          {getMenuData(menuData)}
+        </div>
+        <div style={{ height: '10em', justifySelf: 'center' }}>
+          <button className="menuOrderButton">Order Now</button>
         </div>
       </div>
     </div>

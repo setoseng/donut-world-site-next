@@ -1,6 +1,16 @@
 .offerContainer {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
+}
+
+.heroOfferImage {
+  grid-area: 1/1;
+}
+.offerSubContainer {
+  grid-area: 1/1;
+  position: relative;
+  text-align: center;
+  margin-top: 5em;
 }
 
 .offerText {
@@ -13,8 +23,8 @@
 }
 
 .heartContainer {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 3.5em 7em 3.5em;
   justify-content: center;
   text-align: center;
 }
@@ -30,9 +40,9 @@
 }
 
 .imageContainer {
-  display: flex;
-  flex-direction: row;
-  column-gap: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1em;
   align-self: center;
   text-align: center;
 }
@@ -51,7 +61,6 @@
 }
 
 .statementSubText {
-  display: flex;
   font-size: 14px;
 }
 

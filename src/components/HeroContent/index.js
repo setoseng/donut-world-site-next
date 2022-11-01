@@ -1,42 +1,33 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from 'gatsby-background-image'
+import { StaticImage } from "gatsby-plugin-image"
 
 import './style.css'
 
 const HeroContent = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        desktop: file(relativePath: { eq: "background-slider.jpeg" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  )
-  const imageData = data.desktop.childImageSharp.fluid
 
   return (
-    <BackgroundImage
-      Tag="section"
-      className='heroContainer'
-      fluid={imageData}
-      backgroundColor={`#040e18`}
-      alt="background image of donuts"
-    >
-      <div className='heroText'>
-        <p className='premiumText'>Premium</p>
-        <p className='qualityText'>QUALITY</p>
-        <p className='donutText'>Donuts</p>
-        <p className='kolacheText'>&Kolaches</p>
-      </div>
-    </BackgroundImage>
+  <div className='heroContainer'>
+    <StaticImage
+      className="heroImage"
+      layout="fullWidth"
+      placeholder="blurred"
+      // You can optionally force an aspect ratio for the generated image
+      aspectRatio={2 / 1}
+      quality={80}
+      // This is a presentational image, so the alt should be an empty string
+      alt=""
+      src={"../../images/background-slider.jpeg"}
+      formats={["auto", "webp", "avif"]}
+    />
+    <div className='heroText'>
+      <p className='premiumText'>Premium</p>
+      <p className='qualityText'>QUALITY</p>
+      <p className='donutText'>Donuts</p>
+      <p className='kolacheText'>&Kolaches</p>
+    </div>
+  </div>
   )
 }
 

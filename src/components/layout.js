@@ -26,7 +26,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Donut World`} />
-      <div>
+      <div
+        style={{
+          display: 'grid',
+        }}
+      >
         <main>{children}</main>
         <footer
           style={{
