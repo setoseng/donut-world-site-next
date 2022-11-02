@@ -87,9 +87,10 @@
   background-color: white;
   border:#d1466c solid 1px;
   border-radius: 40px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
 }
 .menuOrderButton:hover {
   letter-spacing: 3px;
   width: 12em;
-  transition: all 0.3s ease-out;
 }
