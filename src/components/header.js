@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
-import logo from '../images/logo-pink-svg.svg'
+import { useScrollTo } from 'react-use-window-scroll'
 
 import "./header.css"
 
 const Header = ({ siteTitle }) => {
   const [headerColor, setHeaderColor] = useState("transparent")
   const [navText ,  setNavText] = useState("white")
+  const scrollTo = useScrollTo()
   const listenScrollEvent = () => {
       if (window.scrollY > 10) {
         setHeaderColor("white")
@@ -44,22 +44,25 @@ const Header = ({ siteTitle }) => {
           style={{ color: navText }}
         >Home</Link>
         <Link
-          to="/about"
+          to="/#about"
+          onClick={() => scrollTo({ top: 750, left: 0, behavior: 'smooth' })}
           className="navItem"
           style={{ color: navText }}
         >About Us</Link>
         <Link
-          to="/menu"
+          to="/#menu"
+          onClick={() => scrollTo({ top: 1550, left: 0, behavior: 'smooth' })}
           className="navItem"
           style={{ color: navText }}
         >Menu</Link>
         <Link
-          to="/apply"
+          to="/#contact"
+          onClick={() => scrollTo({ top: 10000, left: 0, behavior: 'smooth' })}
           className="navItem"
           style={{ color: navText }}
-        >Apply</Link>
+        >Contact</Link>
         <Link
-          to="/order"
+          to="/ordering"
           className="navItemOrder"
           style={{ color: navText }}
         >Order Online</Link>

@@ -6,7 +6,7 @@ import './style.css'
 const Information = () => {
 
   return(
-    <div className="infoContainer">
+    <div className="infoContainer" id="#contact">
       <div className="infoSubContainer">
         <div>
           <h1 className="infoHeaderText">

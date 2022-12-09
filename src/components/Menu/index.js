@@ -1,4 +1,6 @@
 import * as React from "react"
+import { useInView } from 'react-intersection-observer';
+
 
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -42,30 +44,47 @@ const getMenuData = (menuData) => {
 };
 
 const Menu = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  })
+  const getMenuAnimation = () => {
+    let menuAnimation = ""
+      inView ?
+      menuAnimation =  {
+        position: 'relative',
+        opacity: '100%',
+        animation: 'slideInUp ease 1s',
+      }
+        : menuAnimation = {}
+      console.log(menuAnimation);
+      return menuAnimation;
+  }
 
   return (
-    <div className="menuContainer">
-      <div className="menuPanel">
-        <div></div>
-        <div className="menuHeaderContainer">
-          <StaticImage
-            src={'../../images/icon-donut.png'}
-            width={75}
-            height={75}
-            alt="donut icon"
-            className="offerImage"
-          />
-          <h1 className="menuHeaderText">Our Menu</h1>
-          <hr className="menuHeaderDivider" />
-        </div>
-        <div className="menuSubContainer">
-          {getMenuData(menuData)}
-        </div>
-        <div style={{ height: '10em', justifySelf: 'center' }}>
-          <button className="menuOrderButton">Order Now</button>
+      <div className="menuContainer" ref={ref}>
+        <div className="menuPanel" style={getMenuAnimation()}>
+          <div></div>
+          <div className="menuHeaderContainer">
+            <StaticImage
+              src={'../../images/icon-donut.png'}
+              width={75}
+              height={75}
+              alt="donut icon"
+              className="offerImage"
+            />
+            <h1 className="menuHeaderText">Our Menu</h1>
+            <hr className="menuHeaderDivider" />
+          </div>
+          <div className="menuSubContainer">
+            {getMenuData(menuData)}
+          </div>
+          <div style={{ height: '10em', justifySelf: 'center' }}>
+            <button className="menuOrderButton">Order Now</button>
+          </div>
         </div>
       </div>
-    </div>
   )
 }
 

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Donut World",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A next-gen website build for an ever changing industry",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Setya Seng <admin@donutworld.net>",
   "dependencies": {
     "gatsby": "^4.8.0",
     "gatsby-background-image": "^1.6.0",
@@ -19,7 +19,9 @@
     "prop-types": "^15.8.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^9.4.1",
+    "react-use-window-scroll": "^1.0.14"
   },
   "devDependencies": {
     "prettier": "^2.5.1"

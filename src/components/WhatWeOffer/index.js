@@ -1,5 +1,5 @@
-import * as React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
+import React, { useEffect } from "react"
+import { useInView } from 'react-intersection-observer';
 
 import { StaticImage } from 'gatsby-plugin-image'
 
@@ -7,8 +7,20 @@ import './style.css'
 
 
 const WhatWeOffer = () => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  })
+
+  const getContainerName = (name) => {
+    let containerName = ""
+    inView ? containerName =  `${name}Container` : containerName = ""
+    return containerName;
+  }
+  
   return (
-    <div className="offerContainer">
+    <div className="offerContainer" ref={ref}>
       <StaticImage
         className="heroOfferImage"
         layout="fullWidth"
@@ -27,7 +39,7 @@ const WhatWeOffer = () => {
           <hr className="heartLine" style={{ justifySelf: "start" }}/>
         </div>
         <div className="imageContainer">
-          <div>
+          <div className={getContainerName("fresh")}>
             <StaticImage
               src={'../../images/pink-donut.jpg'}
               width={350}
@@ -45,7 +57,7 @@ const WhatWeOffer = () => {
               </p>
             </div>
           </div>
-          <div>
+          <div className={getContainerName("scratch")}>
             <StaticImage
               src={'../../images/flour-bag.jpeg'}
               width={350}
@@ -63,7 +75,7 @@ const WhatWeOffer = () => {
               </p>
             </div>
           </div>
-          <div>
+          <div className={getContainerName("quality")}>
             <StaticImage
               src={'../../images/flour-egg.jpg'}
               width={350}

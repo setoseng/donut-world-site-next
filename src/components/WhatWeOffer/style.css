@@ -47,6 +47,21 @@
   text-align: center;
 }
 
+.freshContainer {
+  position: relative;
+  animation: slideInLeft ease 1s;
+}
+
+.scratchContainer {
+  position: relative;
+  animation: slideInUp ease 1s;
+}
+
+.qualityContainer {
+  position: relative;
+  animation: slideInRight ease 1s;
+}
+
 .statementContainer {
   width: 15em;
   margin: auto;
@@ -66,4 +81,34 @@
 
 .offerImage {
   border-radius: 50%;
+}
+
+@keyframes slideInLeft {
+  0% {
+      left: 500px;
+  }
+
+  100% {
+      left: 0px;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+      top: 500px;
+  }
+
+  100% {
+      top: 0px;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      right: 500px;
+  }
+
+  100% {
+      right: 0px;
+  }
 }
