@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { useScrollTo } from 'react-use-window-scroll'
 
-import "./header.css"
+import * as headerStyle from "./header.module.css"
 
 const Header = ({ siteTitle }) => {
   const [headerColor, setHeaderColor] = useState("transparent")
@@ -24,46 +24,46 @@ const Header = ({ siteTitle }) => {
     window.addEventListener("scroll", listenScrollEvent)
   })
   return (
-    <header>
-    <div className="navBar" style={{ backgroundColor: headerColor }}>
-      <div className="navBrand">
+    <header className={headerStyle.header}>
+    <div className={headerStyle.navBar} style={{ backgroundColor: headerColor }}>
+      <div className={headerStyle.navBrand}>
         <StaticImage
           src='../images/logo-pink-svg.svg'
           alt="Donut World Logo"
           imgStyle={{objectFit:'fill'}}
           quality={100}
-          placeholder='tracedSVG'
+          placeholder="dominant"
         />
       </div>
       <div
-        className="navLinks"
+        className={headerStyle.navLink}
       >
         <Link
           to="/"
-          className="navItem"
+          className={headerStyle.navItem}
           style={{ color: navText }}
         >Home</Link>
         <Link
           to="/#about"
           onClick={() => scrollTo({ top: 750, left: 0, behavior: 'smooth' })}
-          className="navItem"
+          className={headerStyle.navItem}
           style={{ color: navText }}
         >About Us</Link>
         <Link
           to="/#menu"
           onClick={() => scrollTo({ top: 1550, left: 0, behavior: 'smooth' })}
-          className="navItem"
+          className={headerStyle.navItem}
           style={{ color: navText }}
         >Menu</Link>
         <Link
           to="/#contact"
           onClick={() => scrollTo({ top: 10000, left: 0, behavior: 'smooth' })}
-          className="navItem"
+          className={headerStyle.navItem}
           style={{ color: navText }}
         >Contact</Link>
         <Link
           to="/ordering"
-          className="navItemOrder"
+          className={headerStyle.navItemOrder}
           style={{ color: navText }}
         >Order Online</Link>
       </div>

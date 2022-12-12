@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.heroImage {
+  display: grid;
+  height: 40vh;
+  grid-area: 1/1;
+  width: auto;
+}
+
+.heroTextContainer {
+  display: grid;
+  grid-area: 1/1;
+  position: relative;
+  text-align: center;
+}
+
+.heroTextContainer>h1 {
+  font-family: "Montserrat";
+  text-transform: capitalize;
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.heroTextContainer>p {
+  color: white;
+  text-transform: capitalize;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.horizontalLine {
+  background-color: white;
+  align-self: center;
+  justify-self: center;
+  width: 30rem;
+  border: 1px white solid;
+}

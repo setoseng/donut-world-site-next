@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Donut World`} />
+      <Header siteTitle={data.site.siteMetadata?.title || `Donut World`}/>
       <div
         style={{
           display: 'grid',

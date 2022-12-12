@@ -8,6 +8,9 @@
   margin-left: 6rem;
 }
 
+.infoOpacity {
+  opacity: 0;
+}
 .infoSubContainer {
   display: grid;
   grid-template-rows: 3rem 7rem 7rem;
@@ -33,4 +36,23 @@
 .infoContainer h2 {
   margin: 1rem 0 0 0;
   padding: 0;
+}
+
+@keyframes slideInLeft {
+  0% {
+      left: 500px;
+  }
+
+  100% {
+      left: 0px;
+  }
+}
+@keyframes slideInRight {
+  0% {
+      right: 500px;
+  }
+
+  100% {
+      right: 0px;
+  }
 }

@@ -1,7 +1,6 @@
 import * as React from "react"
 import { useInView } from 'react-intersection-observer';
-
-
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import menuData from '../../data/menuData.js'
@@ -58,7 +57,6 @@ const Menu = () => {
         animation: 'slideInUp ease 1s',
       }
         : menuAnimation = {}
-      console.log(menuAnimation);
       return menuAnimation;
   }
 
@@ -81,7 +79,11 @@ const Menu = () => {
             {getMenuData(menuData)}
           </div>
           <div style={{ height: '10em', justifySelf: 'center' }}>
-            <button className="menuOrderButton">Order Now</button>
+            <Link
+              to="/ordering"
+              className="menuOrderButton"
+              >Order Now
+            </Link>
           </div>
         </div>
       </div>
