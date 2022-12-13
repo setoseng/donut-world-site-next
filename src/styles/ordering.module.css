@@ -24,6 +24,7 @@
   color: white;
   font-size: 4rem;
   margin-bottom: 1rem;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.10);
 }
 
 .heroTextContainer>p {
@@ -31,6 +32,7 @@
   text-transform: capitalize;
   margin-top: 1rem;
   font-size: 1.5rem;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.50);
 }
 
 .horizontalLine {

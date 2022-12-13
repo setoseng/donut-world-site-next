@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => {
   //   window.addEventListener("scroll", listenScrollEvent)
   // })
   return (
-    <div className={customNavBarStyle.navBar} style={{ backgroundColor: customHeaderColor }}>
+    <div className={customNavBarStyle.navBar}>
       <div className={customNavBarStyle.navBrand}>
         <StaticImage
           src='../../images/logo-pink-svg.svg'

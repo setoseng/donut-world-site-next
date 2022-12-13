@@ -12,7 +12,9 @@ export default function CartBar() {
    <div className={cartBarStyle.container}>
     <div className={cartBarStyle.navBar}>
       <div className={cartBarStyle.navBrand}>
-        <BsBagDash />
+        <div className={cartBarStyle.bagButton}>
+          <BsBagDash />
+        </div>
         <p>Pick Up</p>
         <p>|</p>
         <p>ASAP</p>
@@ -20,12 +22,13 @@ export default function CartBar() {
       </div>
       <div
         className={cartBarStyle.navLink}
-      >
-        <BsCart3 />
-        <Link
-          to="/"
+      >  
+        <button
           className={cartBarStyle.cartButton}
-        >Home</Link>
+          type="button"
+        >
+          <BsCart3 />
+        </button>
       </div>
     </div>
   </div>

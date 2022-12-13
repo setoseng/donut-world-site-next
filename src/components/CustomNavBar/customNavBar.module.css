@@ -6,7 +6,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: white;
 }
 
 .navBrand {
@@ -16,7 +16,7 @@
 }
 
 .navItem {
-  color: white;
+  color: rgb(61 61 61 / 69%);
   text-decoration: none;
   margin-right: 2rem;
   font-size: 14px;
@@ -25,7 +25,7 @@
 }
 
 .navItemOrder {
-  color: white;
+  color: rgb(61 61 61 / 69%);
   text-decoration: none;
   margin-right: 2rem;
   font-size: 14px;
