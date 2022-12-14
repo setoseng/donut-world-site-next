@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import CustomNavBar from '../components/CustomNavBar'
 import CartBar from '../components/CartBar'
-import SideMenuBar from '../components/SideMenuBar'
+import OrderMenu from '../components/OrderMenu'
 
 
 
@@ -32,7 +32,7 @@ export default function ordering() {
           <p>Pick-Up or Delivery</p>
         </div>
         <CartBar />
-        <SideMenuBar />
+        <OrderMenu />
       </div>
     </div>
   )
