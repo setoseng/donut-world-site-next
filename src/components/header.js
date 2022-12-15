@@ -62,7 +62,7 @@ const Header = ({ siteTitle }) => {
           style={{ color: navText }}
         >Contact</Link>
         <Link
-          to="/ordering"
+          to="/construction"
           className={headerStyle.navItemOrder}
           style={{ color: navText }}
         >Order Online</Link>
