@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Donut World"`,
+    description: `A next-gen website build for an ever changing industry"`,
+    author: `Setya Seng <admin@donutworld.net>`,
+    siteUrl: `https://donutworld.net`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

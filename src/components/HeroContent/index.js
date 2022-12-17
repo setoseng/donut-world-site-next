@@ -18,10 +18,21 @@ const HeroContent = () => {
       quality={80}
       // This is a presentational image, so the alt should be an empty string
       alt=""
-      src={"../../images/background-slider.jpeg"}
+      src={"../../images/donut-hero.jpg"}
       formats={["auto", "webp", "avif"]}
     />
     <div className='heroText'>
+      {/* <StaticImage
+        className="iconDrop"
+        width={25}
+        height={25}
+        placeholder="blurred"
+        // You can optionally force an aspect ratio for the generated image
+        quality={80}
+        alt="image of a donut bouncing"
+        src={"../../images/icon-donut.png"}
+        formats={["auto", "webp", "avif"]}
+      /> */}
       <p className='premiumText'>Premium</p>
       <p className='qualityText'>QUALITY</p>
       <p className='donutText'>Donuts</p>

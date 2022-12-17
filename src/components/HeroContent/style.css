@@ -7,7 +7,13 @@
   grid-area: 1/1;
   width: auto;
   height: 100vh;
+  filter: brightness(50%);
+  background-color: 'black';
 }
+.iconDrop {
+  
+}
+
 .heroText {
   grid-area: 1/1;
   position: relative;
@@ -32,7 +38,7 @@
   text-decoration: none;
   letter-spacing: 5px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 1rem;
   margin: 15px 0 ;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;

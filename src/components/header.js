@@ -4,9 +4,11 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { useScrollTo } from 'react-use-window-scroll'
 
+import { RxHamburgerMenu } from "react-icons/rx";
+
 import * as headerStyle from "./header.module.css"
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [headerColor, setHeaderColor] = useState("transparent")
   const [navText ,  setNavText] = useState("white")
   const scrollTo = useScrollTo()
@@ -19,10 +21,11 @@ const Header = ({ siteTitle }) => {
         setNavText("white")
       }
     }
-  // Similar to componentDidMount and componentDidUpdate:
+
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent)
   })
+
   return (
     <header className={headerStyle.header}>
     <div className={headerStyle.navBar} style={{ backgroundColor: headerColor }}>
@@ -35,9 +38,8 @@ const Header = ({ siteTitle }) => {
           placeholder="dominant"
         />
       </div>
-      <div
-        className={headerStyle.navLink}
-      >
+      <div className={headerStyle.navLink}>
+        <RxHamburgerMenu className={headerStyle.hamburger}/>
         <Link
           to="/"
           className={headerStyle.navItem}
