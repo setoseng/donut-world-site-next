@@ -1,5 +1,4 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from 'gatsby'
 
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -11,10 +10,11 @@ const HeroContent = () => {
   <div className='heroContainer'>
     <StaticImage
       className="heroImage"
-      layout="fullWidth"
-      placeholder="blurred"
+      
+      loading="eager"
+      placeholder="dominantColor"
       // You can optionally force an aspect ratio for the generated image
-      aspectRatio={2 / 1}
+      aspectRatio={1 / 1}
       quality={80}
       // This is a presentational image, so the alt should be an empty string
       alt=""

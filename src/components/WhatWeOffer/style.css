@@ -6,6 +6,7 @@
 .heroOfferImage {
   grid-area: 1/1;
 }
+
 .offerSubContainer {
   grid-area: 1/1;
   position: relative;
@@ -110,5 +111,17 @@
 
   100% {
       right: 0px;
+  }
+}
+
+@media screen and (max-width:700px){
+  .offerContainer {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width:480px){
+  .offerContainer {
+    max-width: 480px;
   }
 }
