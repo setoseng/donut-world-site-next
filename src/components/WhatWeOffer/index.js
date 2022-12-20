@@ -44,7 +44,7 @@ const WhatWeOffer = () => {
               src={'../../images/pink-donut.jpg'}
               width={350}
               height={350}
-              className="offerImage"
+              imgStyle={{ borderRadius: '50%' }}
               alt="image of pink donut"
             />
             <div className="statementContainer">
@@ -62,7 +62,7 @@ const WhatWeOffer = () => {
               src={'../../images/flour-bag.jpeg'}
               width={350}
               height={350}
-              className="offerImage"
+              imgStyle={{ borderRadius: '50%' }}
               alt="image of flour bag"
             />
             <div className="statementContainer">
@@ -80,7 +80,7 @@ const WhatWeOffer = () => {
               src={'../../images/flour-egg.jpg'}
               width={350}
               height={350}
-              className="offerImage"
+              imgStyle={{ borderRadius: '50%' }}
               alt="image of egg on flour"
             />
             <div className="statementContainer">
