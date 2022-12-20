@@ -63,13 +63,13 @@
   }
 
   .qualityContainer {
+    padding-bottom: 8rem;
     position: relative;
     animation: slideInRight ease 2s;
   }
 
   .statementContainer {
     width: 15em;
-    padding-bottom: 8rem;
     margin: auto;
   }
 
