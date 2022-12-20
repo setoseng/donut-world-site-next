@@ -63,7 +63,7 @@
   }
 
   .qualityContainer {
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
     position: relative;
     animation: slideInRight ease 2s;
   }
@@ -182,6 +182,9 @@
 @media screen and (max-width:480px) {
   .heroContainer {
     max-width: 480px;
+  }
+  .offerImage {
+    border-radius: 50%;
   }
 }
 
