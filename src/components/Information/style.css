@@ -1,41 +1,89 @@
-.infoContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  margin-top: 4rem;
-  font-family: "Montserrat","Roboto";
-  margin-right: 6rem;
-  margin-left: 6rem;
+@media screen and (max-width: 959px) {
+  .infoContainer {
+    display: grid;
+    max-width: 959px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-between;
+    margin-top: 4rem;
+    font-family: "Montserrat","Roboto";
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  .infoOpacity {
+    opacity: 0;
+  }
+  .infoSubContainer {
+    display: grid;
+    justify-items: start;
+    grid-template-rows: 2rem 7rem 7rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+  }
+
+  .infoHeaderText {
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .infoContainer h2 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .infoContainer p {
+    margin: .2rem 0 .2rem 0;
+    padding: 0;
+  }
+
+  .infoContainer h2 {
+    margin: 1rem 0 0 0;
+    padding: 0;
+  }
 }
 
-.infoOpacity {
-  opacity: 0;
-}
-.infoSubContainer {
-  display: grid;
-  grid-template-rows: 3rem 7rem 7rem;
-  justify-content: center;
-}
+@media only screen and (min-width: 768px) {
+  .infoContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    margin-top: 4rem;
+    font-family: "Montserrat","Roboto";
+    margin-right: 6rem;
+    margin-left: 6rem;
+  }
 
-.infoHeaderText {
-  font-family: "Cormorant Garamond";
-  font-style: italic;
-  font-weight: 500;
-  font-size: 2rem;
-}
-.infoContainer h2 {
-  font-size: 1rem;
-  font-weight: 500;
-}
+  .infoOpacity {
+    opacity: 0;
+  }
+  .infoSubContainer {
+    display: grid;
+    grid-template-rows: 3rem 7rem 7rem;
+    justify-content: center;
+  }
 
-.infoContainer p {
-  margin: .3rem 0 .3rem 0;
-  padding: 0;
-}
+  .infoHeaderText {
+    font-family: "Cormorant Garamond";
+    font-style: italic;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .infoContainer h2 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 
-.infoContainer h2 {
-  margin: 1rem 0 0 0;
-  padding: 0;
+  .infoContainer p {
+    margin: .3rem 0 .3rem 0;
+    padding: 0;
+  }
+
+  .infoContainer h2 {
+    margin: 1rem 0 0 0;
+    padding: 0;
+  }
 }
 
 @keyframes slideInLeft {

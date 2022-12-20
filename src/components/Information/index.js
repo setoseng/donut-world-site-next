@@ -23,7 +23,6 @@ const Information = () => {
     } else {
       infoAnimation = {}
     }
-    console.log(infoAnimation);
     return infoAnimation;
   }
   return(
