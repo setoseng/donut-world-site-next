@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 
 import style from '../components/typography.css'
 
+
 import HeroContent from "../components/HeroContent"
 import WhatWeOffer from "../components/WhatWeOffer"
 import Menu from "../components/Menu"
@@ -21,7 +22,7 @@ const IndexPage = () => (
     <HeroContent />
     <WhatWeOffer />
     <Menu />
-    <Information />
+    {/* <Information /> */}
     {/* <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />

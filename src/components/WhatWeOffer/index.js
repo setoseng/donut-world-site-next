@@ -34,9 +34,9 @@ const WhatWeOffer = () => {
       <div className="offerSubContainer">
         <h2 className='offerText'>What We Offer</h2>
         <div className="heartContainer">
-          <hr className="heartLine" style={{ justifySelf: "end" }}/>
+          <hr className="heartLine" />
           <p className="heartTextTwo">from our hearts</p>
-          <hr className="heartLine" style={{ justifySelf: "start" }}/>
+          <hr className="heartLine" />
         </div>
         <div className="imageContainer">
           <div className={getContainerName("fresh")}>

@@ -1,87 +1,188 @@
-.offerContainer {
-  min-height: 100vh;
-  display: grid;
+@media screen and (max-width: 959px){
+  .offerContainer {
+    max-width: 959px;
+    min-height: 100vh;
+    display: grid;
+  }
+
+  .heroOfferImage {
+    grid-area: 1/1;
+  }
+
+  .offerSubContainer {
+    grid-area: 1/1;
+    position: relative;
+    text-align: center;
+    margin-top: 5em;
+  }
+
+  .offerText {
+    font-family: 'Cormorant Garamond';
+    font-size: 35px;
+    font-weight: 700!important;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: .2em;
+  }
+
+  .heartContainer {
+    margin: 1rem 1rem;
+    display: grid;
+    grid-template-columns: 3.5em 7em 3.5em;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .heartLine {
+    display: inline;
+    align-self: center;
+    width: 3.5em;
+  }
+
+  .heartTextTwo {
+    font-size: .8rem;
+    color: #8f8f8f;
+  }
+
+  .imageContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 3%;
+    align-self: center;
+    text-align: center;
+  }
+
+  .freshContainer {
+    position: relative;
+    animation: slideInLeft ease 2s;
+  }
+
+  .scratchContainer {
+    position: relative;
+    animation: slideInUp ease 2s;
+  }
+
+  .qualityContainer {
+    position: relative;
+    animation: slideInRight ease 2s;
+  }
+
+  .statementContainer {
+    width: 15em;
+    padding-bottom: 8rem;
+    margin: auto;
+  }
+
+  .statementText {
+    font-family: 'Cormorant Garamond' !important;
+    font-size: 2em;
+    font-weight: 700!important;
+    font-style: italic;
+    margin-top: 1em;
+  }
+
+  .statementSubText {
+    font-size: 14px;
+  }
+
+  .offerImage {
+    border-radius: 50%;
+  }
 }
 
-.heroOfferImage {
-  grid-area: 1/1;
+@media only screen and (min-width: 768px) {
+  .offerContainer {
+    min-height: 100vh;
+    display: grid;
+  }
+
+  .heroOfferImage {
+    grid-area: 1/1;
+  }
+  .offerSubContainer {
+    grid-area: 1/1;
+    position: relative;
+    text-align: center;
+    margin-top: 5em;
+  }
+
+  .offerText {
+    font-family: 'Cormorant Garamond';
+    font-size: 35px;
+    font-weight: 700!important;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: .2em;
+  }
+
+  .heartContainer {
+    margin: 1rem 1rem;
+    display: grid;
+    grid-template-columns: 3.5em 7em 3.5em;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .heartLine {
+    display: inline;
+    align-self: center;
+    width: 3.5em;
+  }
+
+  .heartTextTwo {
+    font-size: .8rem;
+    color: #8f8f8f;
+  }
+
+  .imageContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3%;
+    align-self: center;
+    text-align: center;
+  }
+
+  .freshContainer {
+    position: relative;
+    animation: slideInLeft ease 2s;
+  }
+
+  .scratchContainer {
+    position: relative;
+    animation: slideInUp ease 2s;
+  }
+
+  .qualityContainer {
+    position: relative;
+    animation: slideInRight ease 2s;
+  }
+
+  .statementContainer {
+    width: 15em;
+    margin: auto;
+  }
+
+  .statementText {
+    font-family: 'Cormorant Garamond' !important;
+    font-size: 2em;
+    font-weight: 700!important;
+    font-style: italic;
+    margin-top: 1em;
+  }
+
+  .statementSubText {
+    font-size: 14px;
+  }
+
+  .offerImage {
+    border-radius: 50%;
+  }
 }
 
-.offerSubContainer {
-  grid-area: 1/1;
-  position: relative;
-  text-align: center;
-  margin-top: 5em;
-}
-
-.offerText {
-  font-family: 'Cormorant Garamond';
-  font-size: 35px;
-  font-weight: 700!important;
-  font-style: normal;
-  text-align: center;
-  margin-bottom: .2em;
-}
-
-.heartContainer {
-  display: grid;
-  grid-template-columns: 3.5em 7em 3.5em;
-  justify-content: center;
-  text-align: center;
-}
-
-.heartLine {
-  align-self: center;
-  width: 3.5em;
-}
-
-.heartTextTwo {
-  font-size: 14px;
-  color: #8f8f8f;
-}
-
-.imageContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 1em;
-  align-self: center;
-  text-align: center;
-}
-
-.freshContainer {
-  position: relative;
-  animation: slideInLeft ease 1s;
-}
-
-.scratchContainer {
-  position: relative;
-  animation: slideInUp ease 1s;
-}
-
-.qualityContainer {
-  position: relative;
-  animation: slideInRight ease 1s;
-}
-
-.statementContainer {
-  width: 15em;
-  margin: auto;
-}
-
-.statementText {
-  font-family: 'Cormorant Garamond' !important;
-  font-size: 2em;
-  font-weight: 700!important;
-  font-style: italic;
-  margin-top: 1em;
-}
-
-.statementSubText {
-  font-size: 14px;
-}
-
-.offerImage {
-  border-radius: 50%;
+@media screen and (max-width:480px) {
+  .heroContainer {
+    max-width: 480px;
+  }
 }
 
 @keyframes slideInLeft {
@@ -111,17 +212,5 @@
 
   100% {
       right: 0px;
-  }
-}
-
-@media screen and (max-width:700px){
-  .offerContainer {
-    max-width: 960px;
-  }
-}
-
-@media screen and (max-width:480px){
-  .offerContainer {
-    max-width: 480px;
   }
 }

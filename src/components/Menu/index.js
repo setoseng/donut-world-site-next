@@ -21,7 +21,7 @@ const getMenuData = (menuData) => {
       menuItemType = <h2 className="menuItemType">{cleanMenuItemType}</h2>
       menuItem = value.map((item, index) => {
         return(
-          <div key={`${item} : ${index}`}>
+          <div key={`${item} : ${index}`} className="menuItemContainer">
             <div className="menuTextContainer">
               <p className="menuItemText">{item.name}</p>
               <p className="menuItemText">{item.price}</p>

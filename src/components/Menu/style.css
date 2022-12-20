@@ -1,104 +1,225 @@
-.menuContainer {
-  background-color: #d1466c;
-  display: grid;
-  grid-area: content;
+@media screen and (max-width: 959px) {
+  .menuContainer {
+    max-width: 959px;
+    background-color: #d1466c;
+    display: grid;
+    grid-area: content;
+  }
+
+  .menuPanel {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 3em 10em;
+    background-color: white;
+    border-radius: .5em;
+    opacity: 0;
+    margin: 1rem;
+  }
+
+  .menuHeaderContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menuHeaderText {
+    font-family: "Cormorant Garamond";
+    font-size: 40px;
+    font-weight: 700 !important;
+    text-align: center;
+    margin-top: .2em;
+    margin-bottom: .2em;
+  }
+
+  .menuHeaderDivider {
+    align-self: center;
+    width: 15em;
+  }
+
+  .menuSubContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    margin: .5rem 1.5rem 2rem 1.5rem;
+  }
+
+  .menuItemType {
+    margin-top: 1.5rem;
+    margin-bottom: .7rem;
+    font-size: 2em;
+    font-family: 'Cormorant Garamond'!important;
+    color:#d1466c;
+    font-weight: 300 !important;
+  }
+
+  .menuItemContainer {
+    display: grid;
+    margin-bottom: .5rem;
+  }
+
+  .menuTextContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  .menuTextContainer p:nth-of-type(2) {
+    justify-self: end;
+  }
+
+  .menuItemBorder {
+    border-bottom: 1px dashed #e5e5e5;
+  }
+
+  .menuItemText {
+    font-family: "Montserrat";
+    font-size: 1em;
+    color: #525151;
+    margin-bottom: .5em;
+  }
+  .menuItemDescription {
+    font-family: "Montserrat";
+    font-size: .7em;
+    font-style: italic;
+    color: #525151;
+    margin-top: .5em; 
+    min-height: 4em;
+  }
+
+  .menuOrderButton {
+    color: #d1466c;
+    padding: 1.5rem 3.5rem;
+    font-size: 16px;
+    font-weight: 900 !important;
+    text-align: center;
+    background-color: white;
+    border:#d1466c solid 1px;
+    border-radius: 40px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  }
+
+  .menuOrderButton:hover {
+    letter-spacing: 3.5px;
+    width: 12em;
+  }
 }
 
-.menuPanel {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 3em 10em;
-  background-color: white;
-  margin: 5em;
-  border-radius: .5em;
-  opacity: 0;
+@media only screen and (min-width: 960px) {
+  .menuContainer {
+    background-color: #d1466c;
+    display: grid;
+    grid-area: content;
+  }
+  .menuPanel {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 3rem 10rem;
+    background-color: white;
+    margin: 5em;
+    border-radius: .5em;
+    opacity: 0;
+  }
+
+  .menuHeaderContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menuHeaderText {
+    font-family: "Cormorant Garamond";
+    font-size: 40px;
+    font-weight: 700 !important;
+    text-align: center;
+    margin-top: .2em;
+    margin-bottom: .2em;
+  }
+
+  .menuHeaderDivider {
+    align-self: center;
+    width: 15em;
+  }
+
+  .menuSubContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    column-gap: 5em;
+    margin: 0 7em 2em 7em;
+  }
+
+  .menuItemType {
+    font-size: 2em;
+    font-family: 'Cormorant Garamond'!important;
+    color:#d1466c;
+    font-weight: 300 !important;
+  }
+
+  .menuItemContainer {
+    
+  }
+
+  .menuTextContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  .menuTextContainer p:nth-of-type(2) {
+    justify-self: end;
+  }
+
+  .menuItemBorder {
+    border-bottom: 1px dashed #e5e5e5;
+  }
+
+  .menuItemText {
+    font-family: "Montserrat";
+    font-size: 1em;
+    color: #525151;
+    margin-bottom: .5em;
+  }
+  .menuItemDescription {
+    font-family: "Montserrat";
+    font-size: .7em;
+    font-style: italic;
+    color: #525151;
+    margin-top: .5em; 
+    min-height: 4em;
+  }
+
+  .menuOrderButton {
+    color: #d1466c;
+    padding: 1.5rem 3.5rem;
+    font-size: 16px;
+    font-weight: 900 !important;
+    text-align: center;
+    background-color: white;
+    border:#d1466c solid 1px;
+    border-radius: 40px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  }
+
+  .menuOrderButton:hover {
+    letter-spacing: 3.5px;
+    width: 12em;
+  }
 }
 
-.menuHeaderContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media screen and (max-width:480px) {
+  .heroContainer {
+    max-width: 480px;
+  }
 }
 
-.menuHeaderText {
-  font-family: "Cormorant Garamond";
-  font-size: 40px;
-  font-weight: 700 !important;
-  text-align: center;
-  margin-top: .2em;
-  margin-bottom: .2em;
-}
-
-.menuHeaderDivider {
-  align-self: center;
-  width: 15em;
-}
-
-.menuSubContainer {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  column-gap: 5em;
-  margin: 0 7em 2em 7em;
-}
-
-.menuItemType {
-  font-size: 2em;
-  font-family: 'Cormorant Garamond'!important;
-  color:#d1466c;
-  font-weight: 300 !important;
-}
-
-.menuItemContainer {
-  display: grid;
-}
-
-.menuTextContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-}
-
-.menuTextContainer p:nth-of-type(2) {
-  justify-self: end;
-}
-
-.menuItemBorder {
-  border-bottom: 1px dashed #e5e5e5;
-}
-
-.menuItemText {
-  font-family: "Montserrat";
-  font-size: 1em;
-  color: #525151;
-  margin-bottom: .5em;
-}
-.menuItemDescription {
-  font-family: "Montserrat";
-  font-size: .7em;
-  font-style: italic;
-  color: #525151;
-  margin-top: .5em; 
-  min-height: 4em;
-}
-
-.menuOrderButton {
-  color: #d1466c;
-  padding: 1.5rem 3.5rem;
-  font-size: 16px;
-  font-weight: 900 !important;
-  text-align: center;
-  background-color: white;
-  border:#d1466c solid 1px;
-  border-radius: 40px;
-  letter-spacing: 2px;
-  transition: all 0.3s ease-in-out;
-  text-decoration: none;
-}
-
-.menuOrderButton:hover {
-  letter-spacing: 3.5px;
-  width: 12em;
+@media screen and (max-width:768px) {
+  .heroContainer {
+    max-width: 480px;
+  }
 }
 
 @keyframes slideInUp {
