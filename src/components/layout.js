@@ -9,8 +9,8 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import MobileHeader from "./mobileHeader"
+import Header from "./Header"
+import MobileHeader from "./MobileHeader"
 
 import "./layout.css"
 
