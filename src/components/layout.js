@@ -5,14 +5,27 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import MobileHeader from "./mobileHeader"
+
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 959)
+  
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 959)
+  }
+
+  useEffect(() => {
+   window.addEventListener("resize", updateMedia())
+   return () => window.removeEventListener("resize", updateMedia()) 
+  })
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +38,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Donut World`}/>
+      {
+        isDesktop ? (
+          <Header siteTitle={data.site.siteMetadata?.title || `Donut World`}/>
+        ) : (
+          <MobileHeader siteTitle={data.site.siteMetadata?.title || `Donut World`}/>
+        )
+
+      }
       <div
         style={{
           display: 'grid',

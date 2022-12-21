@@ -2,14 +2,15 @@ import * as React from "react"
 
 import { StaticImage } from "gatsby-plugin-image"
 
-import './style.css'
+import * as heroStyle from './heroStyle.module.css'
+
 
 const HeroContent = () => {
 
   return (
-  <div className='heroContainer'>
+  <div className={heroStyle.heroContainer}>
     <StaticImage
-      className="heroImage"
+      className={heroStyle.heroImage}
       
       loading="eager"
       placeholder="dominantColor"
@@ -21,7 +22,7 @@ const HeroContent = () => {
       src={"../../images/donut-hero.jpg"}
       formats={["auto", "webp", "avif"]}
     />
-    <div className='heroText'>
+    <div className={heroStyle.heroText}>
       {/* <StaticImage
         className="iconDrop"
         width={25}
@@ -33,10 +34,10 @@ const HeroContent = () => {
         src={"../../images/icon-donut.png"}
         formats={["auto", "webp", "avif"]}
       /> */}
-      <p className='premiumText'>Premium</p>
-      <p className='qualityText'>QUALITY</p>
-      <p className='donutText'>Donuts</p>
-      <p className='kolacheText'>&Kolaches</p>
+      <p className={heroStyle.premiumText}>Premium</p>
+      <p className={heroStyle.qualityText}>QUALITY</p>
+      <p className={heroStyle.donutText}>Donuts</p>
+      <p className={heroStyle.kolacheText}>&Kolaches</p>
     </div>
   </div>
   )
