@@ -18,14 +18,14 @@ const Layout = ({ children }) => {
   const [isDesktop, setDesktop] = useState(
     typeof window !== 'undefined'
     ? window.innerWidth > 959
-    : ''
+    : false
     )
   
   const updateMedia = () => {
     setDesktop(
       typeof window !== 'undefined'
       ? window.innerWidth > 959
-      : ''
+      : false
       )
   }
 
