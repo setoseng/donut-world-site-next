@@ -53,6 +53,11 @@
     letter-spacing: 1px;
   }
 
+  .navLink a:active {
+    background-color: none;
+    text-decoration: none;
+  }
+
   .navContainer .checkbox {
     position: absolute;
     display: block;
@@ -140,14 +145,17 @@
 
   .navContainer input[type="checkbox"]:checked ~ .hamburgerLines .lineOne {
     transform: rotate(45deg);
+    background-color: rgba(61,61,61,0.69) !important;
   }
 
   .navContainer input[type="checkbox"]:checked ~ .hamburgerLines .lineTwo {
     transform: scaleY(0);
+    background-color: rgba(61,61,61,0.69) !important;
   }
 
   .navContainer input[type="checkbox"]:checked ~ .hamburgerLines .lineThree {
     transform: rotate(-45deg);
+    background-color: rgba(61,61,61,0.69) !important;
   }
 
   .navContainer input[type="checkbox"]:checked ~ .navBrand{
