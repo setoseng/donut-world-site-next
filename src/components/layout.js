@@ -15,10 +15,18 @@ import MobileHeader from "./MobileHeader"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 959)
+  const [isDesktop, setDesktop] = useState(
+    typeof window != undefined
+    ? window.innerWidth > 959
+    : ''
+    )
   
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 959)
+    setDesktop(
+      typeof window != undefined
+      ? window.innerWidth > 959
+      : ''
+      )
   }
 
   useEffect(() => {
