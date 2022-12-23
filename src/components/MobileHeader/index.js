@@ -40,7 +40,7 @@ const Header = () => {
           />
         </div>
         <input className={headerStyle.checkbox} type="checkbox"/>
-        <div class={headerStyle.hamburgerLines}>
+        <div className={headerStyle.hamburgerLines}>
           <span
             className={`${headerStyle.lineOne} ${headerStyle.line}`}
             style={{ backgroundColor: hamburgerLine }}
