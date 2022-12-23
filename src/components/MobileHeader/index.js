@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -10,7 +10,7 @@ const Header = () => {
   const [headerColor, setHeaderColor] = useState("transparent")
   const [navText ,  setNavText] = useState("#d1466c")
   const [hamburgerLine ,  setHamburger] = useState("white")
-
+  const menuToggleRef = useRef(null);
 
   const scrollTo = useScrollTo()
   const listenScrollEvent = () => {
@@ -39,7 +39,7 @@ const Header = () => {
             placeholder="dominant"
           />
         </div>
-        <input className={headerStyle.checkbox} type="checkbox"/>
+        <input className={headerStyle.checkbox} type="checkbox" ref={menuToggleRef}/>
         <div className={headerStyle.hamburgerLines}>
           <span
             className={`${headerStyle.lineOne} ${headerStyle.line}`}
@@ -56,25 +56,46 @@ const Header = () => {
         </div>  
         <div className={headerStyle.navLinks}>
           <Link
-            to="/"
+            to="/#home"
+            onClick={
+              () => {
+                scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                menuToggleRef.current.checked = false
+              }
+            }
             className={headerStyle.navItem}
             style={{ color: navText }}
           >Home</Link>
           <Link
             to="/#about"
-            onClick={() => scrollTo({ top: 750, left: 0, behavior: 'smooth' })}
+            onClick={
+              () => {
+                scrollTo({ top: 750, left: 0, behavior: 'smooth' })
+                menuToggleRef.current.checked = false
+              }
+            }
             className={headerStyle.navItem}
             style={{ color: navText }}
           >About Us</Link>
           <Link
             to="/#menu"
-            onClick={() => scrollTo({ top: 1550, left: 0, behavior: 'smooth' })}
+            onClick={
+              () => {
+                scrollTo({ top: 2550, left: 0, behavior: 'smooth' })
+                menuToggleRef.current.checked = false
+              }
+            }
             className={headerStyle.navItem}
             style={{ color: navText }}
           >Menu</Link>
           <Link
             to="/#contact"
-            onClick={() => scrollTo({ top: 10000, left: 0, behavior: 'smooth' })}
+            onClick={
+              () => {
+                scrollTo({ top: 10000, left: 0, behavior: 'smooth' })
+                menuToggleRef.current.checked = false
+              }
+            }
             className={headerStyle.navItem}
             style={{ color: navText }}
           >Contact</Link>
