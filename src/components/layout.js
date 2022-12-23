@@ -16,14 +16,14 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
   const [isDesktop, setDesktop] = useState(
-    typeof window != undefined
+    typeof window !== 'undefined'
     ? window.innerWidth > 959
     : ''
     )
   
   const updateMedia = () => {
     setDesktop(
-      typeof window != undefined
+      typeof window !== 'undefined'
       ? window.innerWidth > 959
       : ''
       )
