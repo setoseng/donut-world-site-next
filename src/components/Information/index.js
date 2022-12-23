@@ -13,7 +13,6 @@ const Information = () => {
   })
   const getInfoAnimation = (direction) => {
     let infoAnimation = ""
-    console.log(inView);
     if(inView) {
       infoAnimation =  {
         position: 'relative',
