@@ -30,7 +30,7 @@ const Header = () => {
       <div className={headerStyle.navBar} style={{ backgroundColor: headerColor }}>
         <div className={headerStyle.navBrand}>
           <StaticImage
-            src='../images/logo-pink-svg.svg'
+            src='../../images/logo-pink-svg.svg'
             alt="Donut World Logo"
             imgStyle={{objectFit:'fill'}}
             quality={100}
@@ -62,7 +62,7 @@ const Header = () => {
             style={{ color: navText }}
           >Contact</Link>
           <Link
-            to="/construction"
+            to="/ordering"
             className={headerStyle.navItemOrder}
             style={{ color: navText }}
           >Order Online</Link>

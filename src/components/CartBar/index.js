@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import { BsBagDash, BsCart3, BsChevronRight } from "react-icons/bs";
-
-
 
 import * as cartBarStyle from './cartBarStyle.module.css'
 

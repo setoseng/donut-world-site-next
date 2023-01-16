@@ -32,7 +32,7 @@ const Header = () => {
       <div className={`${headerStyle.container} ${headerStyle.navContainer}`}>
         <div className={headerStyle.navBrand}>
           <StaticImage
-            src='../images/logo-pink-svg.svg'
+            src='../../images/logo-pink-svg.svg'
             alt="Donut World Logo"
             imgStyle={{objectFit:'fill'}}
             quality={100}

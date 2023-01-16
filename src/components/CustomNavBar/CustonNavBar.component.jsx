@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { useScrollTo } from 'react-use-window-scroll'
 
 import * as customNavBarStyle from "./customNavBar.module.css"
 
-const Header = ({ siteTitle }) => {
-  const [customHeaderColor, setCustomHeaderColor] = useState("white")
+const Header = () => {
   const [customNavText ,  setCustomNavText] = useState("rgb(61 61 61 / 69%)")
   // const scrollTo = useScrollTo()
   // const listenScrollEvent = () => {
@@ -34,24 +32,22 @@ const Header = ({ siteTitle }) => {
           placeholder='tracedSVG'
         />
       </div>
-      <div
-        className={customNavBarStyle.navLink}
-      >
+      <div>
         <Link
           to="/"
           className={customNavBarStyle.navItem}
           style={{ color: customNavText }}
         >Home</Link>
         <Link
-          to="/ordering"
+          to="/login"
           className={customNavBarStyle.navItem}
           style={{ color: customNavText }}
         >Log In</Link>
         <Link
-          to="/ordering"
+          to="/signup"
           className={customNavBarStyle.navItem}
           style={{ color: customNavText }}
-        >Register</Link>
+        >Sign Up</Link>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import * as orderMenu from "./orderMenu.module.css"
 import menuData from '../../data/menuData.js'
@@ -33,7 +33,7 @@ const getMenuData = () => {
 function SideMenuBar() {
   getMenuData();
   return (
-    <div>
+    <>
       <div className={orderMenu.container}>
         <div className={orderMenu.menuItemTypeContainer}>
           {menuItemTypeArray}
@@ -42,7 +42,7 @@ function SideMenuBar() {
       <div>
         {menuItem}
       </div>
-    </div>
+    </>
   )
 }
 
