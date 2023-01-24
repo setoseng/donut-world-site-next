@@ -7,20 +7,6 @@ import * as customNavBarStyle from "./customNavBar.module.css"
 
 const Header = () => {
   const [customNavText ,  setCustomNavText] = useState("rgb(61 61 61 / 69%)")
-  // const scrollTo = useScrollTo()
-  // const listenScrollEvent = () => {
-  //     if (window.scrollY > 10) {
-  //       setHeaderColor("white")
-  //       setNavText("rgba(61,61,61,0.69)")
-  //     } else {
-  //       setHeaderColor("transparent")
-  //       setNavText("white")
-  //     }
-  //   }
-  // // Similar to componentDidMount and componentDidUpdate:
-  // useEffect(() => {
-  //   window.addEventListener("scroll", listenScrollEvent)
-  // })
   return (
     <div className={customNavBarStyle.navBar}>
       <div className={customNavBarStyle.navBrand}>

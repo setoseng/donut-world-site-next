@@ -14,6 +14,7 @@ const Header = () => {
 
   const scrollTo = useScrollTo()
   const listenScrollEvent = () => {
+    if(typeof window !== 'undefined') return;
       if (window.scrollY > 10) {
         setHeaderColor("white")
         setHamburger("rgba(61,61,61,0.69)")
@@ -24,6 +25,7 @@ const Header = () => {
     }
 
   useEffect(() => {
+    if(typeof window !== 'undefined') return;
     window.addEventListener("scroll", listenScrollEvent)
   })
 
