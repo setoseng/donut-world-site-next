@@ -43,20 +43,6 @@
     margin: .5rem 1.5rem 2rem 1.5rem;
   }
 
-  .menuItemType {
-    margin-top: 1.5rem;
-    margin-bottom: .7rem;
-    font-size: 2em;
-    font-family: 'Cormorant Garamond'!important;
-    color:#d1466c;
-    font-weight: 300 !important;
-  }
-
-  .menuItemContainer {
-    display: grid;
-    margin-bottom: .5rem;
-  }
-
   .menuTextContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;

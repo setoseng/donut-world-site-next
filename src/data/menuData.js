@@ -1,6 +1,7 @@
 const menuData = [
   {
-    donut: [
+    menuType: 'donut',
+    items: [
       {
         name: "Glazed",
         price: "1.00",
@@ -34,7 +35,8 @@ const menuData = [
     ],
   },
   {
-    kolache: [
+    menuType: 'kolache',
+    items: [
       {
         name: "Small Plain Kolache",
         price: "1.75",
@@ -73,7 +75,8 @@ const menuData = [
     ],
   },
   {
-    croissant: [
+    menuType: 'croissant',
+    items: [
       {
         name: "Ham and Swiss",
         price: "3.25",
@@ -97,7 +100,8 @@ const menuData = [
     ],
   },
   {
-    biscuit: [
+    menuType: 'biscuit',
+    items: [
       {
         name: "Sausage, egg, and cheese sandwich",
         price: "4.25",

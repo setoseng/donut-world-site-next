@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import CustomNavBar from '../components//CustomNavBar/CustonNavBar.component'
 import CartBar from '../components/CartBar'
-import OrderMenu from '../components/OrderMenu'
+import OrderMenu from '../components/OrderMenu/OrderMenu.component'
 
 import * as orderingStyle from '../styles/ordering.module.css'
 

@@ -15,6 +15,10 @@ import {
   getFirestore,
   getDoc,
   setDoc,
+  query,
+  getDocs,
+  writeBatch,
+  collection,
 } from 'firebase/firestore'
 
 import { getAnalytics } from "firebase/analytics";
@@ -45,6 +49,37 @@ export const db = getFirestore();
 provider.setCustomParameters({
   prompt: "select_account"
 });
+
+// Util Function to add Data to Firebase
+// Use Once to Add Collection
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd,
+  ) => {
+  const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
+
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionRef, object.menuType.toLowerCase());
+    batch.set(docRef, object);
+  })
+
+  await batch.commit();
+  console.log('done');
+}
+
+export const getMenuDataAndDocuments = async () => {
+  const collectionRef = collection(db, 'menuData');
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  const menuDataMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    const { menuType, items } = docSnapshot.data();
+    acc[menuType.toLowerCase()] = items;
+    return acc;
+  }, {})
+  return menuDataMap;
+}
 
 export const createUserDocumentFromAuth = async (
   userAuth,
