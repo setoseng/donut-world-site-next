@@ -7,44 +7,7 @@ import MenuItems from "../MenuItems/MenuItems.component";
 
 import { MenuContext } from "../../contexts/menu.context";
 
-
 import './style.css'
-
-const getMenuData = (menuData) => {
-  let
-    menuItem,
-    menuItemType,
-    menuItemData = "";
-  menuData.map((menuItem) => {
-    console.log(menuItem);
-  })
-  //Loop through menuData to assign each menu item names to menuItemType
-  // menuItemData = menuData.map(itemType => {
-  //   for(const [key, value] of Object.entries(itemType)) {
-  //     let cleanMenuItemType = key.charAt(0).toUpperCase() + key.slice(1);
-  //     menuItemType = <h2 className="menuItemType">{cleanMenuItemType}</h2>
-  //     menuItem = value.map((item, index) => {
-  //       return(
-  //         <div key={`${item} : ${index}`} className="menuItemContainer">
-  //           <div className="menuTextContainer">
-  //             <p className="menuItemText">{item.name}</p>
-  //             <p className="menuItemText">{item.price}</p>
-  //           </div>
-  //           <div className="menuItemBorder"></div>
-  //           <p className="menuItemDescription">{item.description}</p>
-  //         </div> 
-  //       )
-  //     })
-  //     return(
-  //       <div>
-  //         {menuItemType}
-  //         {menuItem}
-  //       </div>
-  //     )
-  //   }
-  // });
-  return menuItemData;
-};
 
 const Menu = () => {
   const [ menuState, setMenuState ] = useState(null);

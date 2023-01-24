@@ -43,35 +43,6 @@
     margin: .5rem 1.5rem 2rem 1.5rem;
   }
 
-  .menuTextContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-  }
-
-  .menuTextContainer p:nth-of-type(2) {
-    justify-self: end;
-  }
-
-  .menuItemBorder {
-    border-bottom: 1px dashed #e5e5e5;
-  }
-
-  .menuItemText {
-    font-family: "Montserrat";
-    font-size: 1em;
-    color: #525151;
-    margin-bottom: .5em;
-  }
-  .menuItemDescription {
-    font-family: "Montserrat";
-    font-size: .7em;
-    font-style: italic;
-    color: #525151;
-    margin-top: .5em; 
-    min-height: 4em;
-  }
-
   .menuOrderButton {
     color: #d1466c;
     padding: 1.5rem 3.5rem;

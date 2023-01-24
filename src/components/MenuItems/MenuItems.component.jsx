@@ -14,17 +14,17 @@ const MenuItems = ({ menuProps }) => {
   let cleanMenuItemType = menuType.charAt(0).toUpperCase() + menuType.slice(1);
 
   return (
-    <MenuItemContainer>
+    <MenuItemContainer key={menuType}>
       <MenuItemType>{cleanMenuItemType}</MenuItemType>
       {menuItem.map(item =>
-        <>
+        <div  key={item.name}>
           <MenuTextContainer key={item.name}> 
             <MenuItemText>{item.name}</MenuItemText>
             <MenuItemText>{item.price}</MenuItemText>
           </MenuTextContainer>
           <MenuItemBorder/>
           <MenuItemDescription>{item.description}</MenuItemDescription>
-        </>
+        </div>
       )}
     </MenuItemContainer>
   )
