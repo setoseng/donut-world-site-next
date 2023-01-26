@@ -18,17 +18,17 @@ export const MenuTextContainer = styled.div `
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  ${MenuTextContainer}p:nth-of-type(2) {
-    justify-self: end;
-  }
 `
-
 export const  MenuItemText = styled.p `
   font-family: "Montserrat";
   font-size: 1em;
   color: #525151;
   margin-bottom: .5em;
 `
+export const MenuTextPrice = styled(MenuItemText) `
+    justify-self: end;
+`
+
 export const MenuItemBorder = styled.div `
   border-bottom: 1px dashed #e5e5e5;
 `

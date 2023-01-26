@@ -7,6 +7,7 @@ import {
   MenuItemText,
   MenuItemBorder,
   MenuItemDescription,
+  MenuTextPrice,
 } from './MenuItems.styles'
 
 const MenuItems = ({ menuProps }) => {
@@ -20,7 +21,7 @@ const MenuItems = ({ menuProps }) => {
         <div  key={item.name}>
           <MenuTextContainer key={item.name}> 
             <MenuItemText>{item.name}</MenuItemText>
-            <MenuItemText>{item.price}</MenuItemText>
+            <MenuTextPrice>{item.price}</MenuTextPrice>
           </MenuTextContainer>
           <MenuItemBorder/>
           <MenuItemDescription>{item.description}</MenuItemDescription>
