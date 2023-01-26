@@ -2,8 +2,8 @@ import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 
 import CustomNavBar from '../components//CustomNavBar/CustonNavBar.component'
-import CartBar from '../components/CartBar'
-import OrderMenu from '../components/OrderMenu/OrderMenu.component'
+import CartBar from '../components/CartBar/CartBar.component'
+import OrderMenu from '../components/OrderMenu/SideMenu.component'
 
 import * as orderingStyle from '../styles/ordering.module.css'
 
@@ -30,7 +30,9 @@ export default function ordering() {
           <p>Pick-Up or Delivery</p>
         </div>
         <CartBar />
-        <OrderMenu />
+        <div classname={orderingStyle.body}>
+          <OrderMenu />
+        </div>
       </div>
     </div>
   )
