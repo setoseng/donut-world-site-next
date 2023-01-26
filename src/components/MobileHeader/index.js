@@ -13,21 +13,21 @@ const Header = () => {
   const menuToggleRef = useRef(null);
 
   const scrollTo = useScrollTo()
-  const listenScrollEvent = () => {
-    if(typeof window !== 'undefined') return;
-      if (window.scrollY > 10) {
-        setHeaderColor("white")
-        setHamburger("rgba(61,61,61,0.69)")
-      } else {
-        setHeaderColor("transparent")
-        setHamburger("white")
-      }
-    }
+  // const listenScrollEvent = () => {
+  //   if(typeof window !== 'undefined') return;
+  //     if (window.scrollY > 10) {
+  //       setHeaderColor("white")
+  //       setHamburger("rgba(61,61,61,0.69)")
+  //     } else {
+  //       setHeaderColor("transparent")
+  //       setHamburger("white")
+  //     }
+  //   }
 
-  useEffect(() => {
-    if(typeof window !== 'undefined') return;
-    window.addEventListener("scroll", listenScrollEvent)
-  })
+  // useEffect(() => {
+  //   if(typeof window !== 'undefined') return;
+  //   window.addEventListener("scroll", listenScrollEvent)
+  // })
 
   return (
     <header className={headerStyle.navbar} style={{ backgroundColor: headerColor }}>
