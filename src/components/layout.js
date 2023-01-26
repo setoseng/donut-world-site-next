@@ -31,9 +31,10 @@ const Layout = ({ children }) => {
   }
 
   useEffect(() => {
-   window.addEventListener("resize", updateMedia())
-   return () => window.removeEventListener("resize", updateMedia()) 
-  })
+    if(typeof window == 'undefined') return;
+    window.addEventListener("resize", updateMedia())
+    return () => window.removeEventListener("resize", updateMedia()) 
+  }, [isDesktop])
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
