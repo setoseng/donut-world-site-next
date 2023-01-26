@@ -7,11 +7,10 @@ import { LogInContainer } from "../styles/login.styles"
 
 
 const LogIn = () => (
-  // <LogInContainer>
-  //   <Seo title="Authentication" />
-  //   <LogInForm />
-  // </LogInContainer>
-  <></>
+  <LogInContainer>
+    <Seo title="Authentication" />
+    <LogInForm />
+  </LogInContainer>
 )
 
 export default LogIn
