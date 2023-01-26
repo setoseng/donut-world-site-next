@@ -7,6 +7,7 @@ import { useScrollTo } from 'react-use-window-scroll'
 import * as headerStyle from "./mobileHeader.module.css"
 
 const Header = () => {
+  const isBrowser = typeof window !== "undefined"
   const [headerColor, setHeaderColor] = useState("transparent")
   const [navText ,  setNavText] = useState("#d1466c")
   const [hamburgerLine ,  setHamburger] = useState("white")
@@ -14,20 +15,20 @@ const Header = () => {
 
   const scrollTo = useScrollTo()
   const listenScrollEvent = () => {
-    if(typeof window !== 'undefined') return;
-      if (window.scrollY > 10) {
-        setHeaderColor("white")
-        setHamburger("rgba(61,61,61,0.69)")
-      } else {
-        setHeaderColor("transparent")
-        setHamburger("white")
-      }
+    if (window.scrollY > 10) {
+      setHeaderColor("white")
+      setHamburger("rgba(61,61,61,0.69)")
+    } else {
+      setHeaderColor("transparent")
+      setHamburger("white")
     }
+  }
 
   useEffect(() => {
-    if(typeof window !== 'undefined') return;
+    if(!isBrowser) return;
     window.addEventListener("scroll", listenScrollEvent)
-  })
+    return () => window.removeEventListener("scroll", listenScrollEvent)
+  }, [])
 
   return (
     <header className={headerStyle.navbar} style={{ backgroundColor: headerColor }}>

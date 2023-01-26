@@ -2,18 +2,19 @@ import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+
 import { useScrollTo } from 'react-use-window-scroll'
+import { useWindowScrollPositions } from "../../hooks/useWindowScrollPositions"
 
 import * as headerStyle from "./header.module.css"
 
 const Header = () => {
+  const isBrowser = typeof window !== "undefined"
   const [headerColor, setHeaderColor] = useState("transparent")
   const [navText ,  setNavText] = useState("white")
-
   const scrollTo = useScrollTo()
-   
+
   const listenScrollEvent = () => {
-    if(typeof window !== 'undefined') return;
     if (window.scrollY > 10) {
       setHeaderColor("white")
       setNavText("rgba(61,61,61,0.69)")
@@ -24,9 +25,10 @@ const Header = () => {
   }
 
   useEffect(() => {
-    if(typeof window !== 'undefined') return;
+    if(!isBrowser) return;
     window.addEventListener("scroll", listenScrollEvent)
-  })
+    return () => window.removeEventListener("scroll", listenScrollEvent)
+  }, [])
 
   return (
     <header className={headerStyle.header}>
