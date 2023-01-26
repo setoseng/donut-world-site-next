@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { useScrollTo } from 'react-use-window-scroll'
-import { useWindowScrollPositions } from "../../hooks/useWindowScrollPositions"
 
 import * as headerStyle from "./header.module.css"
 
