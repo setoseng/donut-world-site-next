@@ -3,37 +3,49 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import CustomNavBar from '../components//CustomNavBar/CustonNavBar.component'
 import CartBar from '../components/CartBar/CartBar.component'
-import OrderMenu from '../components/OrderMenu/SideMenu.component'
+import SideMenu from '../components/SideMenu/SideMenu.component'
+import CenterMenu from '../components/CenterMenu/CenterMenu.component'
 
-import * as orderingStyle from '../styles/ordering.module.css'
+import {
+  Container,
+  HeroTextContainer,
+  HeroText,
+  HeroSubText,
+  HorizontalLine,
+  Body,
+}from '../styles/ordering.style.jsx'
 
 export default function ordering() {
   return (
-    <div>
+    <>
       <CustomNavBar />
-      <div className={orderingStyle.container}>
+      <Container>
         <StaticImage
-          className={orderingStyle.heroImage}
+          style={{
+            display: 'grid',
+            height: '40vh',
+            gridArea: '1/1',
+            width: 'auto',
+          }}
           layout="fullWidth"
           placeholder="blurred"
-          // You can optionally force an aspect ratio for the generated image
           aspectRatio={2 / 1}
           quality={80}
-          // This is a presentational image, so the alt should be an empty string
           alt=""
           src={"../images/donut-menu-2.jpg"}
           formats={["auto", "webp", "avif"]}
         />
-        <div className={orderingStyle.heroTextContainer}>
-          <h1>Our Menu</h1>
-          <div className={orderingStyle.horizontalLine}></div>
-          <p>Pick-Up or Delivery</p>
-        </div>
+        <HeroTextContainer>
+          <HeroText>Our Menu</HeroText>
+          <HorizontalLine />
+          <HeroSubText>Pick-Up or Delivery</HeroSubText>
+        </HeroTextContainer>
         <CartBar />
-        <div classname={orderingStyle.body}>
-          <OrderMenu />
-        </div>
-      </div>
-    </div>
+        <Body>
+          <SideMenu />
+          <CenterMenu />
+        </Body>
+      </Container>
+    </>
   )
 }
