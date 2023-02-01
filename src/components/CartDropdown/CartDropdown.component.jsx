@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { CartContext } from '../../contexts/cart.context'
 
-import Button from '../button/button.component'
+import { Button } from '@mui/material'
 
 import {
   CartDropdownContainer,
@@ -29,7 +29,7 @@ const CartDropdown = () => {
         }
       </CartItems> */}
       <Link to='/checkout' onClick={goToCheckoutHandler}>
-        <Button>CHECKOUT</Button>
+        <Button variant="contained">CHECKOUT</Button>
       </Link>
     </CartDropdownContainer>
   )
