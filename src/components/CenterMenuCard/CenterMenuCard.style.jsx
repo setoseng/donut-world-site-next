@@ -1,28 +1,5 @@
 import { styled } from '@mui/system';
 
-import Card from '@mui/material/Card';
-
-
-export const CardContainer = styled('Card')({
-  width: '40rem',
-  height: '20rem',
-  margin: '1rem 0',
-  paddingLeft: '1rem',
-  textAlign: 'left',
-})
-const options = {
-  shouldForwardProp: (prop) => prop !== 'hoverShadow',
-};
-
-export const StyledCard = styled(
-  CardContainer,
-  options,
-)(({ theme, hoverShadow = 1 }) => ({
-  ':hover': {
-    boxShadow: hoverShadow,
-  },
-}));
-
 export const ItemName = styled('p')({
   fontFamily: 'Montserrat',
   fontSize: '1.2rem',
@@ -31,6 +8,33 @@ export const ItemName = styled('p')({
   marginBottom: '.5em',
 })
 
+export const MenuTypeContainer = styled('div')({
+  textAlign: 'left',
+  height: 0,
+  borderTop: '1px solid rgba(0, 0, 0, 0.12)',
+  marginTop: '3rem',
+  marginBottom: '4rem',
+  textAlign: 'left',
+  lineHeight: 0,
+  marginBottom: '24px',
+  letterSpacing: '2px',
+  width: '40rem',
+})
+
+export const MenuType= styled('h1')({
+  fontSize: '1.3rem',
+  textTransform: 'capitalize',
+  display: 'inline',
+  lineHeight: 0,
+  paddingRight: '8px',
+  backgroundColor: 'white'
+})
+
+export const HorizontalLine = styled('span')({
+  width: '1px',
+  borderColor: 'black',
+  borderStyle: 'solid'
+})
 
 export const ItemDescription = styled('p')({
   fontFamily: 'Roboto',

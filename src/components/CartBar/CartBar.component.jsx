@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { CartContext } from '../../contexts/cart.context';
 
 import { BsBagDash, BsCart3, BsChevronRight } from "react-icons/bs";
+import CartIcon from '../CartIcon/CartIcon.component';
+import CartDropdown from '../CartDropdown/CartDropdown.component';
 
 import * as cartBarStyle from './cartBarStyle.module.css'
 
 export default function CartBar() {
+  const { isCartOpen } = useContext(CartContext)
+  console.log(isCartOpen);
   return (
    <div className={cartBarStyle.container}>
     <div className={cartBarStyle.navBar}>
@@ -20,12 +26,8 @@ export default function CartBar() {
       <div
         className={cartBarStyle.navLink}
       >  
-        <button
-          className={cartBarStyle.cartButton}
-          type="button"
-        >
-          <BsCart3 />
-        </button>
+        <CartIcon />
+        {isCartOpen && <CartDropdown />}
       </div>
     </div>
   </div>

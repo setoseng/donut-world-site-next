@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from '@emotion/styled';
 
 const subColor = 'grey';
 const mainColor = 'black';
