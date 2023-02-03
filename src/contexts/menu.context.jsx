@@ -28,5 +28,5 @@ export const MenuProvider = ({children}) => {
     <MenuContext.Provider value={value}>
       {children}
     </MenuContext.Provider>
-  )  
+  )
 }

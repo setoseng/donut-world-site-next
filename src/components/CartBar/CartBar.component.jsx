@@ -10,7 +10,6 @@ import * as cartBarStyle from './cartBarStyle.module.css'
 
 export default function CartBar() {
   const { isCartOpen } = useContext(CartContext)
-  console.log(isCartOpen);
   return (
    <div className={cartBarStyle.container}>
     <div className={cartBarStyle.navBar}>
