@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useInView } from 'react-intersection-observer';
 
 import { StaticImage } from 'gatsby-plugin-image'
@@ -7,7 +7,7 @@ import './style.css'
 
 
 const WhatWeOffer = () => {
-  const { ref, inView, entry } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
     rootMargin: '-200px 0px',
