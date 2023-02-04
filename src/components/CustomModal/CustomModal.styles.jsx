@@ -7,10 +7,14 @@ export const ModalContainer = styled(Box)({
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: '#FFFF',
-  border: '2px solid #000',
+  maxWidth: 'calc(100% - 64px)',
+  backgroundColor: '#FFFF',
+  borderRadius: '5px',
   boxShadow: 24,
-  p: 4,
+  padding: '2rem',
 })
+
+export const DividerContainer = styled(Box)({
+  borderBottom: '1px solid #c8c8c8'
+});
 

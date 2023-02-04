@@ -18,13 +18,17 @@ export const ModalContext = createContext({
   mondalInfo: {},
   setItemSelection: () => {},
   resetItemSelection: () => {},
+  handleOpen: () => {},
+  handleClose: () => {},
+  isOpen: false,
 })
 
 export const ModalProvider = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState(defaultSelectedItem)
+  const [open, setOpen] = useState(false)
+
 
   const setItemSelection = (itemToSelect) => {
-    console.log('this fired', itemToSelect);
     setSelectedItem(setSelection(itemToSelect))
   }
 
@@ -32,10 +36,17 @@ export const ModalProvider = ({ children }) => {
     setSelectedItem(resetSelection(defaultSelectedItem));
   }
   
+  const handleOpen = () => setOpen(true);
+
+  const handleClose = () => setOpen(false);
+
   const value = {
     selectedItem,
     setItemSelection,
     resetItemSelection,
+    handleOpen,
+    handleClose,
+    open,
   }
 
   return (

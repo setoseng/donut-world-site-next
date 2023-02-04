@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react'
 
 import {
-  Grid,
   Container,
 } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2/Grid2.js';
 
 import { MenuContext } from '../../contexts/menu.context.jsx'
 import { ModalContext } from '../../contexts/modal.context.jsx';
@@ -20,11 +20,11 @@ import {
 const CenterMenu = () => {
   const [ menuState, setMenuState ] = useState(null);
   const { menuData } = useContext(MenuContext);
-  const { selectedItem } = useContext(ModalContext)
-  const [open, setOpen] = useState(false)
+  //const { selectedItem } = useContext(ModalContext)
+  //const [open, setOpen] = useState(false)
 
-  const handleOpen = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  //const handleOpen = () => setOpen(true)
+  //const handleClose = () => setOpen(false)
 
   useEffect(() => {
     setMenuState(menuData);
@@ -32,7 +32,7 @@ const CenterMenu = () => {
 
   return (
     <Container spacing={1}>
-      <CustomModal props={{handleOpen, handleClose, open, selectedItem}}/>
+      <CustomModal />
       <Grid xs={4} md={4}>
         {
           menuState != null
@@ -41,12 +41,12 @@ const CenterMenu = () => {
             const menuType = menu[0]
             const menuItem = menu[1]
             return(
-              <>
+              <div key={menuType}>
                 <MenuTypeContainer>
                   <MenuType>{menuType}</MenuType>
                 </MenuTypeContainer>
                 <CenterMenuCard key={menuType} menuItem={menuItem}/>
-              </>
+              </div>
               )
           })
           :

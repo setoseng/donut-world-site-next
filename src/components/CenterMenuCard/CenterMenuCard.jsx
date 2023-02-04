@@ -5,9 +5,9 @@ import {
   Container,
   Button,
 } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Unstable_Grid2'
 
-import { ModalContext } from '../../contexts/modal.context';
+import { ModalContext } from '../../contexts/modal.context'
 
 import {
   ItemName,
@@ -18,9 +18,10 @@ import {
 const CenterMenuCard = ({ menuItem }) => {
   //const [selectedItem, setSelectedItem] = useState(defaultSelectedItem)
   //const [open, setOpen] = useState(false)
-  const { setItemSelection } = useContext(ModalContext)
+  const { open, handleOpen, handleClose, setItemSelection } = useContext(ModalContext)
 
   const handlesSelection = (item) => {
+    handleOpen()
     setItemSelection(item)
   }
 
@@ -38,7 +39,7 @@ const CenterMenuCard = ({ menuItem }) => {
               padding: '1rem',
               textAlign: 'left',
             }}
-            onClick={handlesSelection(item)}
+            onClick={() => handlesSelection(item)}
             key={item.name}>
             <ItemName>{item.name}</ItemName>
             <ItemDescription>{item.description}</ItemDescription>
