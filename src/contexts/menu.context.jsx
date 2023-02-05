@@ -1,8 +1,11 @@
 import React, { createContext, useState, useEffect } from 'react'
 
 // import MENU_DATA from '../data/menuData';
-// import { addCollectionAndDocuments } from '../utils/firebase.utils';
 import { getMenuDataAndDocuments } from '../utils/firebase.utils'
+
+// Import Data to call Util Fuction to add JSON data to FireBase
+// import { addCollectionAndDocuments } from '../utils/firebase.utils';
+//import MENU_DATA from '../data/menuData'
 
 export const MenuContext = createContext({
   menuDataMap: {},

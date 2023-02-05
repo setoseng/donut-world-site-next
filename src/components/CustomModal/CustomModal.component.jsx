@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {
   Container,
   Modal,
@@ -9,6 +9,7 @@ import {
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 import { ModalContext } from '../../contexts/modal.context';
+import { CartContext } from '../../contexts/cart.context';
 
 import {
   ModalContainer,
@@ -17,7 +18,22 @@ import {
 } from './CustomModal.styles';
 
 const CustomModal = () => {
-  const {open, handleClose, selectedItem } = useContext(ModalContext)
+  const { 
+    open,
+    handleClose,
+    selectedItem,
+    itemCount,
+    handleCountDecrease,
+    handleCountIncrease,
+  } = useContext(ModalContext)
+  const { addItemToCart, cartItems } = useContext(CartContext)
+
+  const handleAddItem = () => {
+    addItemToCart(selectedItem, itemCount)
+    handleClose()
+    console.log(cartItems)
+  }
+
   return (
     <Container>
       <Modal
@@ -37,13 +53,26 @@ const CustomModal = () => {
             {selectedItem.description}
           </Typography>
           <Grid container direction="row" mt={2}>
-            <Grid xs={5} md={5} columnGap={1} container direction="row" alignContent="center" alignItems="center">
-              <Button variant="outlined">-</Button>
-              <Typography>1</Typography>
-              <Button variant="outlined">+</Button>
+            <Grid xs={5} md={5} columnGap={2} container direction="row" alignContent="center" alignItems="center">
+              <Button
+                variant="outlined"
+                type="button"
+                onClick={handleCountDecrease}
+                disabled={itemCount <=1 ? true : false}
+                >
+                  -
+                </Button>
+              <Typography>{itemCount}</Typography>
+              <Button variant="outlined" type="button" onClick={handleCountIncrease}>+</Button>
             </Grid>
             <Grid xs={7} md={7}>
-              <Button variant="contained" fullWidth="true">Add To Cart ${selectedItem.price}</Button>
+              <Button
+                variant="contained"
+                fullWidth={true}
+                onClick={handleAddItem}
+                >
+                Add To Cart ${selectedItem.price * itemCount}
+              </Button>
             </Grid>
           </Grid>
         </ModalContainer>

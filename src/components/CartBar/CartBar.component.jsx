@@ -5,11 +5,13 @@ import { CartContext } from '../../contexts/cart.context';
 import { BsBagDash, BsCart3, BsChevronRight } from "react-icons/bs";
 import CartIcon from '../CartIcon/CartIcon.component';
 import CartDropdown from '../CartDropdown/CartDropdown.component';
+import CartDrawer from '../CartDrawer/CartDrawer.component';
 
 import * as cartBarStyle from './cartBarStyle.module.css'
 
 export default function CartBar() {
   const { isCartOpen } = useContext(CartContext)
+
   return (
    <div className={cartBarStyle.container}>
     <div className={cartBarStyle.navBar}>
@@ -26,7 +28,7 @@ export default function CartBar() {
         className={cartBarStyle.navLink}
       >  
         <CartIcon />
-        {isCartOpen && <CartDropdown />}
+        {isCartOpen && <CartDrawer />}
       </div>
     </div>
   </div>

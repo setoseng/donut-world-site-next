@@ -1,116 +1,154 @@
 const menuData = [
   {
-    menuType: 'donut',
+    menuType: 'Donut',
     items: [
       {
-        name: "Glazed",
+        id: 1,
+        name: "Glazed Donut",
         price: "1.00",
-        description: "Golden brown Raised donut with glazed icing"
+        description: "Golden brown Raised donut with glazed icing",
+        imgUrl: "",
       },
       {
-        name: "Chocolate Icing",
+        id: 2,
+        name: "Chocolate Icing Donut",
         price: "1.15",
-        description: "Golden brown Raised donut with chocolate icing"
+        description: "Golden brown Raised donut with chocolate icing",
+        imgUrl: "",
       },
       {
-        name: "Color Icing",
+        id: 3,
+        name: "Color Icing Donut",
         price: "1.15",
-        description: "Golden brown Raised donut with your choice of icing. Pink, white, blue, green, or maple"
+        description: "Golden brown Raised donut with your choice of icing. Pink, white, blue, green, or maple",
+        imgUrl: "",
       },
       {
-        name: "Cake",
+        id: 3,
+        name: "Cake Donut",
         price: "1.15",
-        description: "Cake based donuts. Plain, cinnamon sugar, pink, white, or chocolate icing."
+        description: "Cake based donuts. Plain, cinnamon sugar, pink, white, or chocolate icing.",
+        imgUrl: "",
       },
       {
-        name: "Old Fashion Cake",
+        id: 4,
+        name: "Old Fashion Cake Donut",
         price: "1.15",
-        description: "Old Fashion or Sour Cream based donuts. Plain, glazed, chocolate, or maple."
+        description: "Old Fashion or Sour Cream based donuts. Plain, glazed, chocolate, or maple.",
+        imgUrl: "",
       },
       {
-        name: "Filled ",
+        id: 5,
+        name: "Filled Donut",
         price: "1.25",
-        description: "Raised donut with filling. Bavarian, strawberry, chocolate, apple, and lemon."
+        description: "Raised donut with filling. Bavarian, strawberry, chocolate, apple, and lemon.",
+        imgUrl: "",
       },
     ],
   },
   {
-    menuType: 'kolache',
+    menuType: 'Kolache',
     items: [
       {
+        id: 6,
         name: "Small Plain Kolache",
         price: "1.75",
-        description: "Sweet dough kolache with just sausage"
+        description: "Sweet dough kolache with just sausage",
+        imgUrl: "",
       },
       {
+        id: 7,
         name: "Small Regular Kolache",
         price: "1.75",
-        description: "Sweet dough kolache with sausage and cheese"
+        description: "Sweet dough kolache with sausage and cheese",
+        imgUrl: "",
       },
       {
+        id: 8,
         name: "Small Jalapeno Kolache",
         price: "1.75",
-        description: "Sweet dough kolache with sausage, cheese, and jalapeno"
+        description: "Sweet dough kolache with sausage, cheese, and jalapeno",
+        imgUrl: "",
       },
       {
+        id: 9,
         name: "Large Regular Kolache",
         price: "2.85",
-        description: "Sweet dough kolache with sausage and cheese"
+        description: "Sweet dough kolache with sausage and cheese",
+        imgUrl: "",
       },
       {
+        id: 10,
         name: "Large Jalapeno Kolache",
         price: "2.85",
-        description: "Sweet dough kolache with sausage, cheese, and jalapeno"
+        description: "Sweet dough kolache with sausage, cheese, and jalapeno",
+        imgUrl: "",
       },
       {
+        id: 11,
         name: "Ham and Swiss Kolache",
         price: "2.85",
-        description: "Sweet dough kolache with ham and swiss cheese"
+        description: "Sweet dough kolache with ham and swiss cheese",
+        imgUrl: "",
       },
       {
+        id: 12,
         name: "Boudain Kolache",
         price: "3.25",
-        description: "Sweet dough kolache with boudain sausage and cheese"
+        description: "Sweet dough kolache with boudain sausage and cheese",
+        imgUrl: "",
       },
     ],
   },
   {
-    menuType: 'croissant',
+    menuType: 'Croissant',
     items: [
       {
-        name: "Ham and Swiss",
+        id: 13,
+        name: "Ham and Swiss Croissant",
         price: "3.25",
-        description: "Baked croissant with ham and swiss cheese"
+        description: "Baked croissant with ham and swiss cheese",
+        imgUrl: "",
       },
       {
-        name: "Ham, egg, and cheese sandwich",
+        id: 14,
+        name: "Ham, Egg, and Cheese Croissant",
         price: "4.25",
-        description: "Baked croissant sandwich with ham, egg, and cheese"
+        description: "Baked croissant sandwich with ham, egg, and cheese",
+        imgUrl: "",
       },
       {
-        name: "Sausage, egg, and cheese sandwich",
+        id: 15,
+        name: "Sausage, Egg, and Cheese Croissant",
         price: "4.25",
-        description: "Baked croissant sandwich with sausage, egg, and cheese"
+        description: "Baked croissant sandwich with sausage, egg, and cheese",
+        imgUrl: "",
       },
       {
-        name: "Bacon, egg, and cheese sandwich",
+        id: 16,
+        name: "Bacon, Egg, and Cheese Croissant",
         price: "4.25",
-        description: "Baked croissant sandwich with bacon, egg, and cheese"
+        description: "Baked croissant sandwich with bacon, egg, and cheese",
+        imgUrl: "",
       },
     ],
   },
   {
-    menuType: 'biscuit',
+    menuType: 'Biscuit',
     items: [
       {
-        name: "Sausage, egg, and cheese sandwich",
+        id: 17,
+        name: "Sausage, Egg, and Cheese Biscuit",
         price: "4.25",
-        description: "Baked biscuit sandwich with sausage, egg, and cheese"
+        description: "Baked biscuit sandwich with sausage, egg, and cheese",
+        imgUrl: "",
       },
       {
-        name: "Bacon, egg, and cheese sandwich",
+        id: 18,
+        name: "Bacon, Egg, and Cheese Biscuit",
         price: "4.25",
-        description: "Baked biscuit sandwich with bacon, egg, and cheese"
+        description: "Baked biscuit sandwich with bacon, egg, and cheese",
+        imgUrl: "",
       },
     ],
   },

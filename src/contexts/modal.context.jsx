@@ -21,11 +21,13 @@ export const ModalContext = createContext({
   handleOpen: () => {},
   handleClose: () => {},
   isOpen: false,
+  itemCount: 0,
 })
 
 export const ModalProvider = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState(defaultSelectedItem)
   const [open, setOpen] = useState(false)
+  const [itemCount, setItemCount] = useState(1)
 
 
   const setItemSelection = (itemToSelect) => {
@@ -36,9 +38,20 @@ export const ModalProvider = ({ children }) => {
     setSelectedItem(resetSelection(defaultSelectedItem));
   }
   
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => setOpen(true)
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false)
+    setItemCount(1)
+  }
+
+  const handleCountIncrease = () => setItemCount(itemCount + 1)
+
+  const handleCountDecrease = () => {
+    if(itemCount <= 1) return;
+    setItemCount(itemCount - 1)
+  }
+
 
   const value = {
     selectedItem,
@@ -47,6 +60,9 @@ export const ModalProvider = ({ children }) => {
     handleOpen,
     handleClose,
     open,
+    itemCount,
+    handleCountIncrease,
+    handleCountDecrease,
   }
 
   return (
