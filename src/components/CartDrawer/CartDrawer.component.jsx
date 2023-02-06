@@ -1,29 +1,30 @@
 import React, { useContext, useState, useEffect } from 'react'
+import { round } from 'mathjs'
 
 import {
   Button,
   Drawer,
   Box,
   Typography,
-  Divider,
 } from '@mui/material'
 
 import { CartContext } from '../../contexts/cart.context'
-import { ModalContext } from '../../contexts/modal.context'
 
 import CartDrawerItem from '../CartDrawerItem/CartDrawerItem.component'
 
+import {
+  DrawerCartContainer,
+  DrawerTotalContainer,
+  EmptyCartContainer,
+  EmptyCartText,
+} from './CartDrawer.styles'
+
 const CartDrawer = () => {
-  const { 
-    open,
-    handleClose,
-    selectedItem,
-    itemCount,
-    handleCountDecrease,
-    handleCountIncrease,
-  } = useContext(ModalContext)
-  const { cartItems, isCartOpen, setIsCartOpen } = useContext(CartContext)
+  const { cartCount ,cartTotal, cartItems, isCartOpen, setIsCartOpen } = useContext(CartContext)
   const [ cartState, setCartState]  = useState([])
+  const [ taxTotal, setTaxTotal] = useState(0)
+
+  
 
   const openDrawer = () => setIsCartOpen(true)
   const closeDrawer = () => setIsCartOpen(false)
@@ -32,6 +33,13 @@ const CartDrawer = () => {
     setCartState(cartItems)
   }, [cartItems])
 
+  useEffect(() => {
+    console.log(cartTotal, 'this ran')
+    if(cartTotal <= 0) return;
+    setTaxTotal(round((cartTotal * 0.08), 2))
+    console.log(cartTotal, taxTotal);
+  }, [cartTotal])
+
   return (
     <Drawer
       anchor={'right'}
@@ -39,13 +47,37 @@ const CartDrawer = () => {
       onClose={closeDrawer}
     >
       <Box sx={{ width: 500 }}>
-        <Typography>You Cart</Typography>
-        <Divider />
+        <DrawerCartContainer p={3}>
+          <Typography>You Cart</Typography>
+        </DrawerCartContainer>
+        
         {
           cartItems.map((item) => 
-            <CartDrawerItem item={item}/>
+            <CartDrawerItem key={item.id} item={item}/>
           )
         }
+        {
+          cartCount!= 0
+          ?
+          <>
+            <DrawerTotalContainer pr={3} pl={3} pt={1} pb={1} >
+              <Typography>Item Total: ${cartTotal}</Typography>
+              <Typography>Tax: ${taxTotal}</Typography>
+            </DrawerTotalContainer>
+            <Box p={3}>
+              <Typography>Total Cost: ${cartTotal + taxTotal}</Typography>
+              <Button fullWidth={true} variant="contained" sx={{mt: 2}}>Check Out</Button>
+            </Box>
+          </>
+          :
+          <EmptyCartContainer>
+            <EmptyCartText>
+              Add items to your order and
+              <br />they will appear here.
+            </EmptyCartText>
+          </EmptyCartContainer>
+        }
+        
       </Box>
     </Drawer>
   )
