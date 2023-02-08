@@ -64,11 +64,11 @@ const Menu = () => {
           }
         </div>
         <div style={{ height: '10em', justifySelf: 'center' }}>
-          <Link
+          {/* <Link
             to="/construction"
             className="menuOrderButton"
             >Order Now
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
