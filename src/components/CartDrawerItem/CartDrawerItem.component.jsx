@@ -3,9 +3,10 @@ import React, { useContext } from 'react'
 import {
   Button,
   Typography,
-  Grid,
   Box,
 } from '@mui/material';
+
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 
 import { ModalContext } from '../../contexts/modal.context';
 import { CartContext } from '../../contexts/cart.context';
@@ -16,8 +17,12 @@ import { DrawerItemContainer } from './CartDrawerItem.styles';
 
 const CartDrawerItem = ({item}) => {
   const {name, quantity, price } = item
-  const {itemCount, handleCountDecrease, handleCountIncrease} = useContext(ModalContext)
-  const { handleAddItem, cartTotal } = useContext(CartContext)
+  const { addItemToCart, removeItemFromCart, clearItemFromCart } = useContext(CartContext)
+
+  const handleAddItem = () => addItemToCart(item)
+  const handleRemoveItem = () => removeItemFromCart(item)
+  const handleClearItem = () => clearItemFromCart(item)
+  
 
   return (
     <DrawerItemContainer p={3}>
@@ -30,21 +35,21 @@ const CartDrawerItem = ({item}) => {
           <Button
             variant="outlined"
             type="button"
-            onClick={handleCountDecrease}
-            disabled={itemCount <=1 ? true : false}
+            onClick={handleRemoveItem}
+            disabled={quantity <=1 ? true : false}
             >
               -
             </Button>
-          <Typography>{itemCount}</Typography>
-          <Button variant="outlined" type="button" onClick={handleCountIncrease}>+</Button>
+          <Typography>{quantity}</Typography>
+          <Button variant="outlined" type="button" onClick={handleAddItem}>+</Button>
         </Grid>
         <Grid xs={7} md={7}>
           <Button
             variant="contained"
             fullWidth={true}
-            onClick={handleAddItem}
+            onClick={handleClearItem}
             >
-            Add To Cart ${cartTotal}
+            Remove Item
           </Button>
         </Grid>
       </Grid>

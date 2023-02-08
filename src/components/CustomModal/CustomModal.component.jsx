@@ -31,7 +31,6 @@ const CustomModal = () => {
   const handleAddItem = () => {
     addItemToCart(selectedItem, itemCount)
     handleClose()
-    console.log(cartItems)
   }
 
   return (

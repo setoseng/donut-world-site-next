@@ -8,11 +8,11 @@ const addCartItem = (cartItems, itemToAdd, itemCount) => {
   if(existingCartItem) {
     return cartItems.map((cartItem) => 
       cartItem.id === itemToAdd.id
-        ? {...cartItem, quantity: cartItem.quantity + itemCount}
+        ? {...cartItem, quantity: cartItem.quantity + (typeof itemCount === 'number' ? itemCount :  + 1)}
         : cartItem
     )
   }
-  return [...cartItems, {...itemToAdd, quantity: itemCount}];
+  return [...cartItems, {...itemToAdd, quantity: (typeof itemCount === 'number' ? itemCount : 1)}];
 }
 
 const removeCartItem = (cartItems, itemToRemove) => {

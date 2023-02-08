@@ -34,10 +34,8 @@ const CartDrawer = () => {
   }, [cartItems])
 
   useEffect(() => {
-    console.log(cartTotal, 'this ran')
     if(cartTotal <= 0) return;
     setTaxTotal(round((cartTotal * 0.08), 2))
-    console.log(cartTotal, taxTotal);
   }, [cartTotal])
 
   return (

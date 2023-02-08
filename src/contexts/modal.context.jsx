@@ -48,6 +48,7 @@ export const ModalProvider = ({ children }) => {
   const handleCountIncrease = () => setItemCount(itemCount + 1)
 
   const handleCountDecrease = () => {
+    console.log('this ran')
     if(itemCount <= 1) return;
     setItemCount(itemCount - 1)
   }
