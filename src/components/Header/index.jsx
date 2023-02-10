@@ -65,11 +65,11 @@ const Header = () => {
             className={headerStyle.navItem}
             style={{ color: navText }}
           >Contact</Link>
-          <Link
+          {/* <Link
             to="/ordering"
             className={headerStyle.navItemOrder}
             style={{ color: navText }}
-          >Order Online</Link>
+          >Order Online</Link> */}
         </div>
       </div>
     </header>
