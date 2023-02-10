@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { StaticImage } from "gatsby-plugin-image"
 
 
-export const Container = styled.div `
+export const OrderContainer = styled.div `
   display: grid;
   align-items: center;
   text-align: center;

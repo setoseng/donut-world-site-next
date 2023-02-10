@@ -1,6 +1,17 @@
 import React, { useContext } from 'react'
 
+import {
+  Container,
+  Box,
+  Typography,
+  AppBar,
+  IconButton,
+  Toolbar
+} from '@mui/material'
+
+
 import { CartContext } from '../../contexts/cart.context';
+
 
 import { BsBagDash, BsCart3, BsChevronRight } from "react-icons/bs";
 import CartIcon from '../CartIcon/CartIcon.component';
@@ -13,24 +24,25 @@ export default function CartBar() {
   const { isCartOpen } = useContext(CartContext)
 
   return (
-   <div className={cartBarStyle.container}>
-    <div className={cartBarStyle.navBar}>
-      <div className={cartBarStyle.navBrand}>
-        <div className={cartBarStyle.bagButton}>
-          <BsBagDash />
-        </div>
-        <p>Pick Up</p>
-        <p>|</p>
-        <p>ASAP</p>
-        <BsChevronRight />
-      </div>
-      <div
-        className={cartBarStyle.navLink}
-      >  
-        <CartIcon />
-        {isCartOpen && <CartDrawer />}
-      </div>
-    </div>
-  </div>
+
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" sx={{backgroundColor: 'transparent', color: 'black' }}>
+        <Toolbar>
+          <IconButton sx={{ mr: 1 }}>
+            <div className={cartBarStyle.bagButton}>
+              <BsBagDash />
+            </div>
+            <Typography>Pick Up</Typography>
+            <Typography>|</Typography>
+            <Typography>ASAP</Typography>
+            <BsChevronRight />
+          </IconButton>
+          <div className={cartBarStyle.navLink}>  
+                <CartIcon />
+                {isCartOpen && <CartDrawer />}
+              </div>
+        </Toolbar>
+      </AppBar>
+    </Box>
   )
 }

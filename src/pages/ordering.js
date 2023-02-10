@@ -1,5 +1,7 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
+import { Container } from '@mui/material'
+
 
 import { ModalProvider } from '../contexts/modal.context'
 
@@ -9,7 +11,7 @@ import SideMenu from '../components/SideMenu/SideMenu.component'
 import CenterMenu from '../components/CenterMenu/CenterMenu.component'
 
 import {
-  Container,
+  OrderContainer,
   HeroTextContainer,
   HeroText,
   HeroSubText,
@@ -22,7 +24,7 @@ export default function ordering() {
     <>
       <ModalProvider>
         <CustomNavBar />
-        <Container>
+        <OrderContainer>
           <StaticImage
             style={{
               display: 'grid',
@@ -44,11 +46,11 @@ export default function ordering() {
             <HeroSubText>Pick-Up or Delivery</HeroSubText>
           </HeroTextContainer>
           <CartBar />
-          <Body>
-            <SideMenu />
+          <Container>
+            {/* <SideMenu /> */}
             <CenterMenu />
-          </Body>
-        </Container>
+          </Container>
+        </OrderContainer>
       </ModalProvider>
     </>
   )
