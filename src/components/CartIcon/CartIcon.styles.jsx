@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { BsCart3 } from "react-icons/bs";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 export const CartIconContainer = styled.div`
   width: 45px;
@@ -21,10 +21,10 @@ export const CartIconContainer = styled.div`
   letter-spacing: 1px;
   width: 10rem;
   height: 2rem;
-  background-color: #d1466c;
+  background-color: #F6416C;
 
 `
-export const ShoppingIconStyle = styled(BsCart3)`
+export const ShoppingIconStyle = styled(ShoppingCartOutlinedIcon)`
   width: 1.5rem;
   height: 1.5rem;
 `

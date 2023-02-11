@@ -1,5 +1,6 @@
+import { Typography } from '@mui/material';
 import React, { useContext } from 'react' 
-import { useState } from 'react';
+
 import { CartContext } from '../../contexts/cart.context'
 
 import {
@@ -19,20 +20,19 @@ const CartIcon = () => {
   const toggleIsCartOpen = () => {
     setIsCartOpen(!isCartOpen);
   }
-
   return (
     <CartIconContainer onClick={toggleIsCartOpen}>
       <ShoppingIconStyle />
-    {cartCount.length <= 0 &&
+    {/* {(cartCount > 0) &&
       <ItemCount>
         {cartCount}
         {
           cartCount > 1
-          ? 'items'
-          : 'item'
+          ? <Typography variant="h8"> ITEMS</Typography>
+          : <Typography variant="h8"> ITEM</Typography>
         }
       </ItemCount>
-    }
+    } */}
     <ItemCount>
       ${cartTotal}
     </ItemCount>
