@@ -1,7 +1,12 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
-import { Container } from '@mui/material'
+import {
+  Container,
+  Box,
+  Item,
+} from '@mui/material'
 
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
 
 import { ModalProvider } from '../contexts/modal.context'
 
@@ -46,9 +51,17 @@ export default function ordering() {
             <HeroSubText>Pick-Up or Delivery</HeroSubText>
           </HeroTextContainer>
           <CartBar />
-          <Container>
-            {/* <SideMenu /> */}
-            <CenterMenu />
+          <Container sx={{ display: 'flex'}}>
+            <Grid container>
+              <Grid xs={3} md={3} lg={3}>
+                <SideMenu/>
+              </Grid>
+              <Grid xs={6} md={6} lg={6}>
+                <CenterMenu />
+              </Grid>
+              <Grid xs={3} md={3} lg={3}></Grid>
+            </Grid>
+            
           </Container>
         </OrderContainer>
       </ModalProvider>

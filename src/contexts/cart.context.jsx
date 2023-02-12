@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 
+import { round } from 'mathjs'
+
 const addCartItem = (cartItems, itemToAdd, itemCount) => {
   let existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === itemToAdd.id
@@ -65,7 +67,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const newCartTotal = cartItems.reduce((total, cartItem) => {
-      return total + (cartItem.price * cartItem.quantity)
+      return round(total + (cartItem.price * cartItem.quantity), 2)
     }, 0);
     setCartTotal(newCartTotal)
   }, [cartItems]);

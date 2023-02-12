@@ -1,22 +1,50 @@
 import React from 'react'
 
 import {
-  MenuTextContainer,
-  MenuItemText,
-  MenuTextPrice,
-  MenuItemBorder,
-  MenuItemDescription,
-} from './SideMenuItem.style'
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Typography,
+} from '@mui/material';
+
+import { useScrollTo } from 'react-use-window-scroll'
+
 
 const SideMenuItem = ({ menuProps }) => {
-  const {menuType, menuItem} = menuProps
+  const { menuType } = menuProps
   let cleanMenuItemType = menuType.charAt(0).toUpperCase() + menuType.slice(1);
+  const scrollTo = useScrollTo()
 
+  const scrollX = {
+   'biscuit': 900,
+   'croissant': 1250,
+   'donut': 1800,
+   'kolache': 3000, 
+  }
+  
+  const scrollById = (id) => {
+    const xDirection = scrollX[id];
+    scrollTo({ top: xDirection, left: 0, behavior: 'smooth' })
+  }
+
+  const handleScroll = () => {
+    scrollById(menuType)
+  }
 
   return (
-    <div>
-      {cleanMenuItemType}
-    </div>
+    <ListItem>
+      <ListItemButton
+        onClick={handleScroll}
+        sx={{
+          '&:hover': { backgroundColor: 'rgba(246, 65, 107, 0.032)' },
+        }}
+      >
+        <ListItemText
+          disableTypography
+          primary={<Typography variant="h6">{cleanMenuItemType}</Typography>}
+        />
+      </ListItemButton>
+    </ListItem>
   )
 }
 

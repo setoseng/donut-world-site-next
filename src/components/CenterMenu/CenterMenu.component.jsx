@@ -43,7 +43,7 @@ const CenterMenu = () => {
             return(
               <div key={menuType}>
                 <MenuTypeContainer>
-                  <MenuType>{menuType}</MenuType>
+                  <MenuType id={menuType}>{menuType}</MenuType>
                 </MenuTypeContainer>
                 <CenterMenuCard key={menuType} menuItem={menuItem}/>
               </div>

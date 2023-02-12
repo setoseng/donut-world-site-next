@@ -6,6 +6,7 @@ import {
   Drawer,
   Box,
   Typography,
+  ListItem
 } from '@mui/material'
 
 import { CartContext } from '../../contexts/cart.context'
@@ -48,16 +49,15 @@ const CartDrawer = () => {
         <DrawerCartContainer p={3}>
           <Typography>You Cart</Typography>
         </DrawerCartContainer>
-        
-        {
-          cartItems.map((item) => 
-            <CartDrawerItem key={item.id} item={item}/>
-          )
-        }
+          {
+            cartItems.map((item) => 
+              <CartDrawerItem key={item.id} item={item}/>
+            )
+          }
         {
           cartCount!= 0
           ?
-          <>
+          <Box sx={{ position: 'relative', bottom: 0 }}>
             <DrawerTotalContainer pr={3} pl={3} pt={1} pb={1} >
               <Typography>Item Total: ${cartTotal}</Typography>
               <Typography>Tax: ${taxTotal}</Typography>
@@ -66,7 +66,7 @@ const CartDrawer = () => {
               <Typography>Total Cost: ${cartTotal + taxTotal}</Typography>
               <Button fullWidth={true} variant="contained" sx={{mt: 2}}>Check Out</Button>
             </Box>
-          </>
+          </Box>
           :
           <EmptyCartContainer>
             <EmptyCartText>

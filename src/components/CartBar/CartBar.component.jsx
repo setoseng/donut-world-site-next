@@ -22,7 +22,14 @@ export default function CartBar() {
   const { isCartOpen } = useContext(CartContext)
   const theme = useTheme()
   return (
-      <AppBar position="sticky" sx={{ flexGrow: 1, backgroundColor: 'white', color: 'black' }}>
+      <AppBar
+        position="sticky"
+        sx={{
+          flexGrow: 1,
+          backgroundColor: 'white',
+          color: 'black',
+        }}
+      >
         <Toolbar sx={{ ml: 5 }}> 
           <IconButton sx={{
               mr: 1.5,

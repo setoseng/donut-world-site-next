@@ -6,10 +6,12 @@ import {
   Typography
 } from '@mui/material'
 
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
 
-import { ModalContext } from '../../contexts/modal.context';
-import { CartContext } from '../../contexts/cart.context';
+import { multiply, round } from 'mathjs'
+
+import { ModalContext } from '../../contexts/modal.context'
+import { CartContext } from '../../contexts/cart.context'
 
 import {
   ModalContainer,
@@ -34,7 +36,7 @@ const CustomModal = () => {
   }
 
   return (
-    <Container>
+    <Container sx={{zIndex: (theme) => theme.zIndex.drawer + 99}}>
       <Modal
         open={open}
         onClose={handleClose}
@@ -51,8 +53,8 @@ const CustomModal = () => {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             {selectedItem.description}
           </Typography>
-          <Grid container direction="row" mt={2}>
-            <Grid xs={5} md={5} columnGap={2} container direction="row" alignContent="center" alignItems="center">
+          <Grid container direction="row" mt={2} sx={{ justifyContent: "space-between"}}>
+            <Grid xs={5} md={5} lg={5} columnGap={2} container direction="row" alignContent="center" alignItems="center">
               <Button
                 variant="outlined"
                 type="button"
@@ -64,13 +66,13 @@ const CustomModal = () => {
               <Typography>{itemCount}</Typography>
               <Button variant="outlined" type="button" onClick={handleCountIncrease}>+</Button>
             </Grid>
-            <Grid xs={7} md={7}>
+            <Grid xs={7} md={7} lg={7}>
               <Button
                 variant="contained"
                 fullWidth={true}
                 onClick={handleAddItem}
                 >
-                Add To Cart ${selectedItem.price * itemCount}
+                Add To Cart ${round(multiply(selectedItem.price, itemCount), 2)}
               </Button>
             </Grid>
           </Grid>

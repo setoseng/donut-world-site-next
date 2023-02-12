@@ -6,12 +6,13 @@ import {
   Box,
 } from '@mui/material';
 
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
 
-import { ModalContext } from '../../contexts/modal.context';
-import { CartContext } from '../../contexts/cart.context';
+import { round } from 'mathjs'
 
-import { DrawerItemContainer } from './CartDrawerItem.styles';
+import { CartContext } from '../../contexts/cart.context'
+
+import { DrawerItemContainer } from './CartDrawerItem.styles'
 
 
 
@@ -28,7 +29,7 @@ const CartDrawerItem = ({item}) => {
     <DrawerItemContainer p={3}>
       <Box>
         <Typography>{name}</Typography>       
-        <Typography>${price * quantity}</Typography>
+        <Typography>${round((price * quantity), 2)}</Typography>
       </Box>
       <Grid container direction="row" mt={2}>
         <Grid xs={5} md={5} columnGap={2} container direction="row" alignContent="center" alignItems="center">
