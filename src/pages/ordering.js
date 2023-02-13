@@ -59,7 +59,8 @@ export default function ordering() {
               <Grid xs={6} md={6} lg={6}>
                 <CenterMenu />
               </Grid>
-              <Grid xs={3} md={3} lg={3}></Grid>
+              <Grid xs={3} md={3} lg={3}>
+              </Grid>
             </Grid>
             
           </Container>

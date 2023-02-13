@@ -9,6 +9,8 @@ import {
   ListItem
 } from '@mui/material'
 
+import { Link } from 'gatsby'
+
 import { CartContext } from '../../contexts/cart.context'
 
 import CartDrawerItem from '../CartDrawerItem/CartDrawerItem.component'
@@ -63,8 +65,10 @@ const CartDrawer = () => {
               <Typography>Tax: ${taxTotal}</Typography>
             </DrawerTotalContainer>
             <Box p={3}>
-              <Typography>Total Cost: ${cartTotal + taxTotal}</Typography>
-              <Button fullWidth={true} variant="contained" sx={{mt: 2}}>Check Out</Button>
+              <Typography>Total Cost: ${round((cartTotal + taxTotal), 2)}</Typography>
+              <Link to='/checkout' style={{ textDecoration: 'none' }}>
+                <Button fullWidth={true} variant="contained" sx={{mt: 2}}>Check Out</Button>
+              </Link>
             </Box>
           </Box>
           :
