@@ -17,11 +17,12 @@ import {
 
 import { useTheme } from '@mui/system'
 
-import { StaticImage } from 'gatsby-plugin-image'
+import { Link as GatsbyLink } from 'gatsby'
 
 import AddressForm from '../components/CheckOutForm/AddressForm/AddressForm.component'
 import PaymentForm from '../components/CheckOutForm/PaymentForm/PaymentForm.component'
 import ReviewForm from '../components/CheckOutForm/ReviewForm/ReviewForm.component'
+import CustomAppBar from '../components/CustomAppBar/CustomAppBar.component'
 
 const steps = ['Shipping address', 'Payment details', 'Review your order']
 
@@ -65,28 +66,18 @@ const Checkout = () => {
   return (
     <>
       <CssBaseline />
-      <AppBar
-        position="absolute"
-        color="default"
-        elevation={0}
-        sx={{
-          position: 'relative',
-          borderBottom: (t) => `1px solid ${t.palette.divider}`,
-        }}
-      >
-        <Toolbar>
-          <StaticImage
-            src='../../../images/logo-pink-svg.svg'
-            alt="Donut World Logo"
-            imgStyle={{objectFit:'fill'}}
-            quality={100}
-            placeholder='tracedSVG'
-          />
-          <Typography variant="h6" color="inherit" noWrap>
-            Donut World
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <CustomAppBar>
+        <Link
+          to="/ordering"
+          component={GatsbyLink}
+          sx={{
+            textDecoration: 'none',
+            color: 'rgb(61 61 61 / 69%)',
+          }}
+        >
+          Back to Menu
+        </Link>
+      </CustomAppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">

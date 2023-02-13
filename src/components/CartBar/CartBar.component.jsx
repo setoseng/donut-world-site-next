@@ -30,7 +30,7 @@ export default function CartBar() {
           color: 'black',
         }}
       >
-        <Toolbar sx={{ ml: 5 }}> 
+        <Toolbar sx={{ mx: 5 }}> 
           <IconButton sx={{
               mr: 1.5,
               color: theme.palette.primary.main,

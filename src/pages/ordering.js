@@ -1,16 +1,20 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
+import { Link as GatsbyLink } from 'gatsby'
 import {
   Container,
+  AppBar,
+  Toolbar,
+  Typography,
   Box,
-  Item,
+  Link,
 } from '@mui/material'
 
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 
 import { ModalProvider } from '../contexts/modal.context'
 
-import CustomNavBar from '../components//CustomNavBar/CustonNavBar.component'
+import CustomAppBar from '../components/CustomAppBar/CustomAppBar.component'
 import CartBar from '../components/CartBar/CartBar.component'
 import SideMenu from '../components/SideMenu/SideMenu.component'
 import CenterMenu from '../components/CenterMenu/CenterMenu.component'
@@ -28,7 +32,38 @@ export default function ordering() {
   return (
     <>
       <ModalProvider>
-        <CustomNavBar />
+        <CustomAppBar props={{ backgroundColor : 'white' }}>
+          <Link
+            to="/"
+            component={GatsbyLink}
+            sx={{
+              textDecoration: 'none',
+              color: 'rgb(61 61 61 / 69%)',
+            }}
+          >
+            Home
+          </Link>
+          <Link
+            to="/login"
+            component={GatsbyLink}
+            sx={{
+              textDecoration: 'none',
+              color: 'rgb(61 61 61 / 69%)',
+            }}
+          >
+            Log In
+          </Link>
+          <Link
+            to="/signup"
+            component={GatsbyLink}
+            sx={{
+              textDecoration: 'none',
+              color: 'rgb(61 61 61 / 69%)',
+            }}
+          >
+            Sign Up
+          </Link>
+        </CustomAppBar>
         <OrderContainer>
           <StaticImage
             style={{
