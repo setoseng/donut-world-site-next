@@ -35,7 +35,7 @@ const CustomAppBar = ({ children, props}) => {
           <StaticImage
             width={47}
             height={55}
-            src='../images/logo-pink-svg.svg'
+            src='../../images/logo-pink-svg.svg'
             alt="Donut World Logo"
             imgStyle={{objectFit:'fill'}}
             quality={100}
