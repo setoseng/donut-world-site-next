@@ -1,5 +1,5 @@
 {
-  "name": "Donut World",
+  "name": "DonutWorld",
   "private": true,
   "description": "A next-gen website build for an ever changing industry",
   "version": "0.1.0",
@@ -34,7 +34,8 @@
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^9.4.1",
     "react-redux": "^8.0.5",
-    "react-use-window-scroll": "^1.0.14"
+    "react-use-window-scroll": "^1.0.14",
+    "stripe": "^11.10.0"
   },
   "devDependencies": {
     "@redux-devtools/core": "^3.13.1",

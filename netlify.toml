@@ -2,3 +2,8 @@
   command = "# no build command"
   functions = "functions"
   publish = "public"
+
+[[redirects]]
+  from = '/functions/*'
+  to = '/.netlify/functions/:splat'
+  status = 200
