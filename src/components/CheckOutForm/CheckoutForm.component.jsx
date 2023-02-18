@@ -6,8 +6,10 @@ import {
   useElements,
 } from '@stripe/react-stripe-js'
 
+import { Button } from '@mui/material'
+
 const CheckoutForm = () => {
-  const stripe = useStripe
+  const stripe = useStripe()
   const elements = useElements()
 
   const [email, setEmail] = useState('')
@@ -50,7 +52,7 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000/success"
+        return_url: "http://localhost:8000/success"
       }
     })
     // This point will only be reached if there is an immediate error when
@@ -71,20 +73,19 @@ const CheckoutForm = () => {
   }
 
   return (
-    // <form id="payment-form" onSubmit={handleSubmit}>
-    //   <LinkAuthenticationElement
-    //     id="link-authentication-element"
-    //     onChange={(e) => setEmail(e.target.value)}
-    //   />
-    //   <PaymentElement id="payment-element" options={paymentElementOptions} />
-    //   <button disabled={isLoading || !stripe || !elements} id="submit">
-    //     <span id="button-text">
-    //       {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-    //     </span>
-    //   </button>
-    //   {message && <div id="payment-message">{message}</div>}
-    // </form>
-    <></>
+    <form id="payment-form" onSubmit={handleSubmit}>
+      <LinkAuthenticationElement
+        id="link-authentication-element"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <PaymentElement id="payment-element" options={paymentElementOptions} />
+      <Button variant="contained" disabled={isLoading || !stripe || !elements} id="submit">
+        <span id="button-text">
+          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+        </span>
+      </Button>
+      {message && <div id="payment-message">{message}</div>}
+    </form>
   )
 }
 
