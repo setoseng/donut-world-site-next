@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -8,6 +8,7 @@ import {
   Toolbar,
   Box,
   Typography,
+  Link,
  } from "@mui/material"
 
 const CustomAppBar = ({ children, props}) => {
@@ -32,15 +33,25 @@ const CustomAppBar = ({ children, props}) => {
     >
       <Toolbar sx={{ mx: 5 }}>
         <Box sx={{ flexGrow: 1 }}>
-          <StaticImage
-            width={47}
-            height={55}
-            src='../../images/logo-pink-svg.svg'
-            alt="Donut World Logo"
-            imgStyle={{objectFit:'fill'}}
-            quality={100}
-            placeholder='tracedSVG'
+          <Link
+            to="/"
+            component={GatsbyLink}
+            sx={{
+              textDecoration: 'none',
+              color: 'rgb(61 61 61 / 69%)',
+            }}
+          >
+            <StaticImage
+              width={47}
+              height={55}
+              src='../../images/logo-pink-svg.svg'
+              alt="Donut World Logo"
+              imgStyle={{objectFit:'fill'}}
+              quality={100}
+              placeholder='tracedSVG'
           />
+          </Link>
+          
         </Box>
         <Box
           sx={{
