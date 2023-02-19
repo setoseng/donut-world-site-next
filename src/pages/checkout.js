@@ -4,18 +4,17 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import {
-  AppBar,
   CssBaseline,
   Box,
   Container,
-  Toolbar,
   Paper,
-  Stepper,
-  Step,
-  StepLabel,
   Button,
   Link,
   Typography,
+  CircularProgress,
+  Stepper,
+  StepLabel,
+  Step,
  } from '@mui/material'
 
 import { useTheme } from '@mui/system'
@@ -35,7 +34,7 @@ const stripePromise = loadStripe(
   "pk_test_51Mb8MhJx5DmJ6KOb9YpZdtu5CAra4npu1fPGKCBQVBRXPtKHW0B5fJDvJhzc0Tlp4YhExxUAaMnqevkXEzLoqNuK00QemRNAi7"
 );
 
-const steps = ['Shipping address', 'Payment details', 'Review your order']
+const steps = ['Review your order', 'Checkout']
 
 const Copyright = () => {
   return (
@@ -60,7 +59,9 @@ const Checkout = () => {
     fetch("/api/payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
+      body: JSON.stringify({ 
+        items: [{ id: "xl-tshirt" }],
+      }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
@@ -77,8 +78,6 @@ const Checkout = () => {
 
   const getStepContent = (step) => {
     switch(step) {
-      case 0: 
-        return <AddressForm />
       case 1:
         if(clientSecret) {
           return (
@@ -87,12 +86,12 @@ const Checkout = () => {
             </Elements>
           )
         } else {
-          return(
-            <Typography>Error Retrieving Data from Stripe</Typography>
+          return (
+            <CircularProgress sx={{ alignSelf: 'center' }} />
           )
         }
               
-      case 2:
+      case 0:
         return <ReviewForm />
       default:
         throw new Error('Unknown Step')
@@ -122,34 +121,33 @@ const Checkout = () => {
           <Typography component="h1" variant="h4" align="center">
             Checkout
           </Typography>
-          <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+          {/* <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
-          </Stepper>
+          </Stepper> */}
           {activeStep === steps.length ? (
             <>
               <Typography variant="h5" gutterBottom>
                 Thank you for your order.
               </Typography>
               <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
+                We'll have your order ready in 10-15 minutes
               </Typography>
             </>
           ) : (
             <>
-              {getStepContent(activeStep)}
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Box sx={{ display: 'flex', flexDirection: 'column'}}>
+                {getStepContent(1)}
+              </Box>
+              {/* <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 {activeStep !== 0 && (
                   <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
                     Back
                   </Button>
                 )}
-
                 <Button
                   variant="contained"
                   onClick={handleNext}
@@ -157,7 +155,7 @@ const Checkout = () => {
                 >
                   {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                 </Button>
-              </Box>
+              </Box> */}
             </>
           )}
         </Paper>

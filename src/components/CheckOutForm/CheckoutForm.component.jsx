@@ -6,7 +6,12 @@ import {
   useElements,
 } from '@stripe/react-stripe-js'
 
-import { Button } from '@mui/material'
+import {
+  Button,
+  Box,
+} from '@mui/material'
+
+const SITE_URL = 'htps://donutworld.net'
 
 const CheckoutForm = () => {
   const stripe = useStripe()
@@ -42,7 +47,7 @@ const CheckoutForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+    console.log('this rans')
     if (!stripe || !elements) {
       return
     }
@@ -52,7 +57,7 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:8000/success"
+        return_url: `${SITEURL}/success`
       }
     })
     // This point will only be reached if there is an immediate error when
@@ -76,14 +81,26 @@ const CheckoutForm = () => {
     <form id="payment-form" onSubmit={handleSubmit}>
       <LinkAuthenticationElement
         id="link-authentication-element"
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) => setEmail(e.target)}
       />
       <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <Button variant="contained" disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-        </span>
-      </Button>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={isLoading || !stripe || !elements} id="submit"
+          sx={{
+            my: 3,
+            width: 150,
+            height: 50,
+            alignSelf: 'flex-end',
+          }}
+        >
+          <span id="button-text">
+            {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+          </span>
+        </Button>
+      </Box>
       {message && <div id="payment-message">{message}</div>}
     </form>
   )

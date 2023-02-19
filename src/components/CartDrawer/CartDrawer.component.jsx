@@ -28,7 +28,6 @@ const CartDrawer = () => {
   const [ taxTotal, setTaxTotal] = useState(0)
 
   
-
   const openDrawer = () => setIsCartOpen(true)
   const closeDrawer = () => setIsCartOpen(false)
 
