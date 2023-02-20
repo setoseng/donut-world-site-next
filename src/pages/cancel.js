@@ -25,7 +25,7 @@ import CustomAppBar from '../components/CustomAppBar/CustomAppBar.component'
 
 const estimateTime = `10-15 minutes`
 
-const Success = () => {
+const Cancel = () => {
   const theme = useTheme()
   const [clientSecret, setClientSecret] = useState("")
   const [ activeStep, setStep ] = useState(0)
@@ -48,8 +48,7 @@ const Success = () => {
       <Container component="main" maxWidth="md" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="left">
-            Payment Successful. The order has been sent to the restauraunt. We'll have it prepared
-            and ready for you within {estimateTime}. Thank you
+            The order was canceled. No order was sent to the restauraunt. If this is a mistake, please retry.
           </Typography>
         </Paper>
       </Container>
@@ -57,4 +56,4 @@ const Success = () => {
   )
 }
 
-export default Success
+export default Cancel

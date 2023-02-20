@@ -19,28 +19,27 @@ export const HeroTextContainer = styled.div `
   display: grid;
   grid-area: 1/1;
   position: relative;
-  text-align: center;
+  text-align: left;
+  margin-left: 10rem;
 `
 export const HeroText = styled.h1 `
-  font-family: "Montserrat";
+  font-family: "Roboto";
   text-transform: capitalize;
   color: white;
   font-size: 4rem;
   margin-bottom: 1rem;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.10);
 `
 export const HeroSubText = styled.p `
   color: white;
   text-transform: capitalize;
   margin-top: 1rem;
   font-size: 1.5rem;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.50);
 `
 export const HorizontalLine = styled.div `
   background-color: white;
   align-self: center;
-  justify-self: center;
-  width: 30rem;
+  justify-self: left;
+  width: 16rem;
   border: 1px white solid;
 `
 

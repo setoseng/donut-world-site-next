@@ -30,27 +30,29 @@ export default function CartBar() {
           color: 'black',
         }}
       >
-        <Toolbar sx={{ mx: 5 }}> 
-          <IconButton sx={{
-              mr: 1.5,
-              color: theme.palette.primary.main,
-              backgroundColor: '#f6416b43',
-              '&:hover': { backgroundColor: '#f6416b49' },
-            }}
-          >
-            <LocalMallIcon />
-          </IconButton>
-          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', columnGap: 1, flexGrow: 1 }}>
-            <Typography variant="h8">Pick Up</Typography>
-            <Typography>|</Typography>
-            <Typography variant="h8">ASAP</Typography>
-            <ChevronRightIcon />
-          </Box>
-            <Button size="large">
-              <CartIcon />
-              {isCartOpen && <CartDrawer />}
-            </Button>
-        </Toolbar>
+        <Container>
+          <Toolbar> 
+            <IconButton sx={{
+                mr: 1.5,
+                color: theme.palette.primary.main,
+                backgroundColor: '#f6416b43',
+                '&:hover': { backgroundColor: '#f6416b49' },
+              }}
+            >
+              <LocalMallIcon />
+            </IconButton>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', columnGap: 1, flexGrow: 1 }}>
+              <Typography variant="h8">Pick Up</Typography>
+              <Typography>|</Typography>
+              <Typography variant="h8">ASAP</Typography>
+              <ChevronRightIcon />
+            </Box>
+              <Button size="large">
+                <CartIcon />
+                {isCartOpen && <CartDrawer />}
+              </Button>
+          </Toolbar>
+        </Container>
       </AppBar>
   )
 }

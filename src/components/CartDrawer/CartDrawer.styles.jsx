@@ -2,12 +2,12 @@ import { styled } from "@mui/system"
 import { Box, Typography } from "@mui/material";
 
 export const DrawerCartContainer = styled(Box)({
-  borderBottom: '1px solid #c8c8c8'
+  borderBottom: '1px solid rgb(200 200 200 / 10%)'
 });
 
 export const DrawerTotalContainer = styled(Box)({
-  borderBottom: '1px solid #c8c8c8',
-  borderTop: '1px solid #c8c8c8',
+  borderBottom: '1px solid rgb(200 200 200 / 40%)',
+  borderTop: '1px solid rgb(200 200 200 / 40%)',
 });
 
 export const EmptyCartContainer = styled(Box)({

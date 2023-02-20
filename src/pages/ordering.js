@@ -32,59 +32,64 @@ export default function ordering() {
   return (
     <>
       <ModalProvider>
-        <CustomAppBar props={{ backgroundColor : 'white' }}>
-          <Link
-            to="/"
-            component={GatsbyLink}
-            sx={{
-              textDecoration: 'none',
-              color: 'rgb(61 61 61 / 69%)',
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            to="/login"
-            component={GatsbyLink}
-            sx={{
-              textDecoration: 'none',
-              color: 'rgb(61 61 61 / 69%)',
-            }}
-          >
-            Log In
-          </Link>
-          <Link
-            to="/signup"
-            component={GatsbyLink}
-            sx={{
-              textDecoration: 'none',
-              color: 'rgb(61 61 61 / 69%)',
-            }}
-          >
-            Sign Up
-          </Link>
-        </CustomAppBar>
+        <Container>
+          <CustomAppBar props={{ backgroundColor : 'white' }}>
+            <Link
+              to="/"
+              component={GatsbyLink}
+              sx={{
+                textDecoration: 'none',
+                color: 'rgb(61 61 61 / 69%)',
+              }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/login"
+              component={GatsbyLink}
+              sx={{
+                textDecoration: 'none',
+                color: 'rgb(61 61 61 / 69%)',
+              }}
+            >
+              Log In
+            </Link>
+            <Link
+              to="/signup"
+              component={GatsbyLink}
+              sx={{
+                textDecoration: 'none',
+                color: 'rgb(61 61 61 / 69%)',
+              }}
+            >
+              Sign Up
+            </Link>
+          </CustomAppBar>
+        </Container>
         <OrderContainer>
           <StaticImage
             style={{
-              display: 'grid',
-              height: '100vh',
-              gridArea: '1/1',
-              width: 'auto',
+              height: '40vh',
             }}
             layout="fullWidth"
             placeholder="blurred"
-            aspectRatio={2 / 1}
-            quality={80}
+            quality={100}
             alt=""
-            src={"../images/feels.png"}
+            src={"../images/order-donut.png"}
             formats={["auto", "webp", "avif"]}
           />
-          <HeroTextContainer>
-            <HeroText>Our Menu</HeroText>
+          {/* <HeroTextContainer>
+            <Typography
+              sx={{
+                color: 'white',
+                textDecoration: 'italic'
+              }}
+              variant="h2"
+            >
+              Our Menu
+            </Typography>
             <HorizontalLine />
-            <HeroSubText>Pick-Up or Delivery</HeroSubText>
-          </HeroTextContainer>
+          </HeroTextContainer> */}
           <CartBar />
           <Container sx={{ display: 'flex'}}>
             <Grid container>

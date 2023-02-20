@@ -50,25 +50,34 @@ const CartDrawer = () => {
         <DrawerCartContainer p={3}>
           <Typography>You Cart</Typography>
         </DrawerCartContainer>
-          {
-            cartItems.map((item) => 
-              <CartDrawerItem key={item.id} item={item}/>
-            )
-          }
+        
         {
           cartCount!= 0
           ?
-          <Box sx={{ position: 'relative', bottom: 0 }}>
-            <DrawerTotalContainer pr={3} pl={3} pt={1} pb={1} >
-              <Typography>Item Total: ${cartTotal}</Typography>
-              <Typography>Tax: ${taxTotal}</Typography>
-            </DrawerTotalContainer>
-            <Box p={3}>
-              <Typography>Total Cost: ${round((cartTotal + taxTotal), 2)}</Typography>
-              <Link to='/checkout' style={{ textDecoration: 'none' }}>
-                <Button fullWidth={true} variant="contained" sx={{mt: 2}}>Check Out</Button>
-              </Link>
-            </Box>
+          <Box
+            sx={{
+              width: 500, 
+            }}
+          >
+            <>
+              {
+                cartItems.map((item) => 
+                  <CartDrawerItem key={item.id} item={item}/>
+                )
+              }
+            </>
+            <>
+              <DrawerTotalContainer pr={3} pl={3} py={3} >
+                <Typography variant='subtitle2'>Item Total: ${cartTotal}</Typography>
+                <Typography variant='subtitle2'>Tax: ${taxTotal}</Typography>
+              </DrawerTotalContainer>
+              <Box p={3}>
+                <Typography variant='h6'>Total Cost: ${round((cartTotal + taxTotal), 2)}</Typography>
+                <Link to='/checkout' style={{ textDecoration: 'none' }}>
+                  <Button fullWidth={true} variant="contained" sx={{mt: 2}}>Check Out</Button>
+                </Link>
+              </Box>
+            </>
           </Box>
           :
           <EmptyCartContainer>

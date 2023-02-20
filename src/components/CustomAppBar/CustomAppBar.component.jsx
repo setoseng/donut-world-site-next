@@ -26,12 +26,13 @@ const CustomAppBar = ({ children, props}) => {
       color="default"
       elevation={0}
       sx={{
+        width: '100%',
         backgroundColor: defaultColor,
         position: 'relative',
         borderBottom: (t) => `1px solid ${t.palette.divider}`,
       }}
     >
-      <Toolbar sx={{ mx: 5 }}>
+      <Toolbar>
         <Box sx={{ flexGrow: 1 }}>
           <Link
             to="/"
