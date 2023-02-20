@@ -11,9 +11,10 @@ import {
   Box,
 } from '@mui/material'
 
-const SITE_URL = 'htps://donutworld.net'
+
 
 const CheckoutForm = () => {
+  const SITE_URL = 'htps://donutworld.net'
   const stripe = useStripe()
   const elements = useElements()
 
@@ -57,7 +58,7 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `${SITEURL}/success`
+        return_url: `${SITE_URL}/success`
       }
     })
     // This point will only be reached if there is an immediate error when
