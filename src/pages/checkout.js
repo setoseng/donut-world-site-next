@@ -56,7 +56,7 @@ const Checkout = () => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("/api/payment-intent", {
+    fetch(".netlify/functions/payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 
