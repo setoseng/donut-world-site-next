@@ -30,7 +30,7 @@
     "gbimage-bridge": "^0.2.2",
     "mathjs": "^11.5.1",
     "prop-types": "^15.8.0",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-intersection-observer": "^9.4.1",
