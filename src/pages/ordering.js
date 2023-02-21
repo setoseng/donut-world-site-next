@@ -44,7 +44,7 @@ export default function ordering() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               to="/login"
               component={GatsbyLink}
               sx={{
@@ -63,7 +63,7 @@ export default function ordering() {
               }}
             >
               Sign Up
-            </Link>
+            </Link> */}
           </CustomAppBar>
         </Container>
         <OrderContainer>
